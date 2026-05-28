@@ -1,0 +1,309 @@
+/* ================================
+   ROOT VARIABLES
+================================ */
+
+:root {
+    --deep-red: #7b2d26;
+    --deep-red-dark: #5f1f1a;
+
+    --forest-green: #2f5d3f;
+    --forest-green-light: #4f7d5f;
+
+    --cream: #f7f1e3;
+    --warm-cream: #efe4cf;
+
+    --brown: #6b4f3b;
+    --light-brown: #9b7b61;
+
+    --text-dark: #2a2a2a;
+    --text-light: #ffffff;
+
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    --transition: 0.3s ease;
+}
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+
+    font-family: "Trebuchet MS", sans-serif;
+
+    line-height: 1.7;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+#mainHeader {
+    background-color: var(--cream);
+}
+
+/* Top Banner */
+#topBanner {
+    background-color: var(--deep-red) !important;
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+#mainNavbar {
+    background-color: var(--warm-cream) !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    color: var(--forest-green) !important;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover {
+    color: var(--deep-red) !important;
+}
+
+.navBtn {
+    color: var(--brown) !important;
+
+    font-weight: 600;
+
+    margin-left: 10px;
+
+    transition: var(--transition);
+
+    position: relative;
+}
+
+/* Animated underline */
+.navBtn::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 0%;
+    height: 2px;
+
+    background-color: var(--deep-red);
+
+    transition: var(--transition);
+}
+
+.navBtn:hover::after {
+    width: 100%;
+}
+
+.navBtn:hover {
+    color: var(--deep-red) !important;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+
+#heroSection {
+    position: relative;
+
+    min-height: 85vh;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+#heroOverlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(47, 93, 63, 0.55),
+            rgba(123, 45, 38, 0.55)
+        );
+}
+
+#heroContent {
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 20px;
+}
+
+#heroContent h1 {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#heroContent p {
+    font-size: 1.2rem;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btn-success {
+    background-color: var(--forest-green);
+    border-color: var(--forest-green);
+
+    transition: var(--transition);
+}
+
+.btn-success:hover {
+    background-color: var(--forest-green-light);
+    border-color: var(--forest-green-light);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline-light:hover {
+    color: var(--deep-red);
+}
+
+.btn-outline-success {
+    border-color: var(--forest-green);
+    color: var(--forest-green);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--forest-green);
+    border-color: var(--forest-green);
+}
+
+/* ================================
+   SECTION STYLES
+================================ */
+
+.sectionTitle {
+    color: var(--deep-red);
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.sectionText {
+    color: #4d4d4d;
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    border: none;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background-color: white;
+
+    transition: var(--transition);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    height: 250px;
+
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--forest-green);
+
+    font-weight: 700;
+}
+
+/* ================================
+   EVENTS SECTION
+================================ */
+
+#eventsSection {
+    background-color: var(--cream);
+}
+
+.eventCard {
+    background-color: #fffdf8;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+#mainFooter {
+    background-color: var(--deep-red-dark) !important;
+}
+
+.footerText {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.socialIcon {
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.socialIcon:hover {
+    color: var(--warm-cream);
+
+    transform: scale(1.15) rotate(-5deg);
+}
+
+/* ================================
+   IMAGES
+================================ */
+
+img {
+    border-radius: 12px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    #heroSection {
+        min-height: 70vh;
+    }
+
+    #heroContent h1 {
+        font-size: 2.7rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem !important;
+    }
+
+    .navBtn {
+        margin-left: 0;
+    }
+
+    .card img {
+        height: 220px;
+    }
+}
