@@ -1,13 +1,14 @@
-const card = document.getElementById('card-container');
+const card = document.getElementById('row-items');
+storeItems.forEach(item => {
 card.innerHTML += `
-<div class="row">
-<div class="card col-4 ms-4">
-    <img class="card-img-top" src="holder.js/100x180/" alt="${storeItems.item}" />
+
+<div class="card col-3 ms-5 me-5 mt-5 mb-5">
+    <img class="card-img-top" src="${item.img}" alt="${storeItems.item}" />
     <div class="card-body">
-        <h4 class="card-title">${storeItems.item}</h4> 
-        <p class="card-text">${storeItems.price}</p> <br>
-              <p class="card-text">${storeItems.note}</p> <br>
-        <p class="card-text">${storeItems.description}</p>
+        <h4 class="card-title">${item.item}</h4> 
+        <p class="card-text">${item.price}</p> <br>
+              <p class="card-text">${item.note}</p> <br>
+        <p class="card-text">${item.description}</p>
     </div>
-</div>
 </div>`
+})
