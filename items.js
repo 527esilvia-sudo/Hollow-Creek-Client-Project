@@ -6,7 +6,7 @@ const storeItems = [
     price: '$6.00',
     note: 'From the 200-hen flock',
     description: 'Farm-fresh eggs available year-round.',
-    img: 'images/fresh-eggs.jpg'
+    img: 'productPhotos/product-fresh-eggs-dozen-carton.png'
 },
 {
     item: 'Raw Honey',
@@ -14,7 +14,7 @@ const storeItems = [
     price: '$12.00',
     note: 'From farm hives',
     description: 'Local raw honey from three on-site hives.',
-    img: 'images/raw-honey.jpg'
+    img: 'productPhotos/product-raw-honey-jar.png'
 },
 {
     item: 'Strawberry Preserves',
@@ -22,7 +22,7 @@ const storeItems = [
     price: '$9.00',
     note: 'Made in-house',
     description: 'Preserves made with seasonal berries.',
-    img: 'images/strawberry-preserves.jpg'
+    img: 'productPhotos/product-strawberry-preserves-jar.png'
     
 },
 {
@@ -31,7 +31,7 @@ const storeItems = [
     price: '$9.00',
     note: 'Made in-house',
     description: 'Small-batch preserves from peak berry season.',
-    img: 'images/blueberry-preserves.jpg'
+    img: 'productPhotos/product-blueberry-preserves-jar.png'
 
 },
 {
@@ -40,7 +40,7 @@ const storeItems = [
     price: '$8.50',
     note: 'Available in fall',
     description: 'Fresh cider pressed on-site, sold by the jug.',
-    img: 'images/fresh-apple-cider.jpg'
+    img: 'productPhotos/product-fresh-apple-cider-jug.png'
 },
 {
     item: 'Sourdough Bread',
@@ -48,7 +48,7 @@ const storeItems = [
     price: '$7.00',
     note: 'Weekends only',
     description: 'Fresh-baked bread available on weekends.',
-    img: 'images/sourdough-bread.jpg'
+    img: 'productPhotos/product-sourdough-bread-loaf.png'
 },
 {
     item: 'Apple Pie',
@@ -56,7 +56,7 @@ const storeItems = [
     price: '$18.00',
     note: 'Weekends only',
     description: 'Farm-made pie using seasonal apples.',
-    img: 'images/apple-pie.jpg'
+    img: 'productPhotos/product-apple-pie-bakery.png'
 },
 {
     item: 'Seasonal Produce Basket',
@@ -64,7 +64,7 @@ const storeItems = [
     price: '$25.00',
     note: 'Changes by season',
     description: 'A rotating selection from the farm fields.',
-    img: 'images/seasonal-produce-basket.jpg'
+    img: 'productPhotos/product-seasonal-produce-basket.png'
 },
 {
     item: 'Beeswax Candles',
@@ -72,7 +72,7 @@ const storeItems = [
     price: '$14.00',
     note: 'From farm hives',
     description: 'Handmade candles from Hollow Creek beeswax.',
-    img: 'images/beeswax-candles.jpg'
+    img: 'productPhotos/product-beeswax-candles.png'
 },
 {
     item: 'Branded Tote Bag',
@@ -80,7 +80,7 @@ const storeItems = [
     price: '$15.00',
     note: 'HCF merch',
     description: 'Reusable tote featuring the farm brand.',
-    img: 'images/branded-tote-bag.jpg'
+    img: 'productPhotos/product-branded-tote-bag.png'
 },
 {
     item: 'Fresh Strawberries',
@@ -88,7 +88,7 @@ const storeItems = [
     price: '$5.00',
     note: 'Picked daily',
     description: 'Sweet seasonal strawberries harvested fresh each morning.',
-    img: 'images/fresh-strawberries.jpg'
+    img: 'productPhotos/product-fresh-strawberries-basket.png'
 },
 {
     item: 'Sweet Corn',
@@ -128,7 +128,7 @@ const storeItems = [
     price: '$10.00',
     note: 'Fall special',
     description: 'Smooth pumpkin spread blended with warm spices.',
-    img: 'images/homemade-pumpkin-butter.jpg'
+    img: 'pumpkin-butter.png'
 },
 {
     item: 'Lavender Soap',
@@ -136,7 +136,7 @@ const storeItems = [
     price: '$7.50',
     note: 'Handcrafted',
     description: 'Small-batch soap infused with farm-grown lavender.',
-    img: 'images/lavender-soap.jpg'
+    img: 'soap.png'
 },
 {
     item: 'Sunflower Bouquet',
@@ -144,7 +144,7 @@ const storeItems = [
     price: '$12.00',
     note: 'Seasonal blooms',
     description: 'Bright hand-cut sunflowers bundled fresh from the field.',
-    img: 'images/sunflower-bouquet.jpg'
+    img: 'sunflower-bouquet.png'
 },
 {
     item: 'Chocolate Chip Cookies',
@@ -152,7 +152,7 @@ const storeItems = [
     price: '$6.00',
     note: 'Fresh daily',
     description: 'Soft-baked cookies made with farm butter and brown sugar.',
-    img: 'images/chocolate-chip-cookies.jpg'
+    img: ''
 },
 {
     item: 'Maple Syrup',
