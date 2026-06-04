@@ -307,3 +307,50 @@ img {
         height: 220px;
     }
 }
+/* ================================
+   CIRCLE CARD LAYOUT
+================================ */
+
+.circle-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start; /* or center if you prefer */
+}
+
+/* Each individual circle */
+.circle-item {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: 0 0 auto; /* prevents Bootstrap col-4 from stretching it */
+}
+
+/* Image inside the circle */
+.circle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Overlay (hidden by default) */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show overlay ONLY on the hovered circle */
+.circle-item:hover .overlay {
+    opacity: 1;
+}
