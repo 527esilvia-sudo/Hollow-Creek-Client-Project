@@ -114,7 +114,7 @@ html {
    HERO SECTION
 ================================ */
 
-#heroSection {
+/* #heroSection {
     position: relative;
 
     min-height: 85vh;
@@ -126,9 +126,9 @@ html {
     background-position: center;
 
     overflow: hidden;
-}
+} */
 
-#heroOverlay {
+/* #heroOverlay {
     position: absolute;
     inset: 0;
 
@@ -137,7 +137,7 @@ html {
             rgba(47, 93, 63, 0.55),
             rgba(123, 45, 38, 0.55)
         );
-}
+} */
 
 #heroContent {
     z-index: 2;
@@ -353,4 +353,46 @@ img {
 /* Show overlay ONLY on the hovered circle */
 .circle-item:hover .overlay {
     opacity: 1;
+}
+
+#heroSection{
+    position:relative;
+    height:85vh;
+    overflow:hidden;
+}
+
+#carouselId{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+#carouselId .carousel-inner,
+#carouselId .carousel-item{
+    height:100%;
+}
+
+#carouselId img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#heroOverlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:2;
+}
+
+#heroContent{
+    position:relative;
+    z-index:3;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
