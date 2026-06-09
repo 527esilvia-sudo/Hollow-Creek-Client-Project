@@ -12,3 +12,20 @@ card.innerHTML += `
     </div>
 </div>`
 })
+function getSeason() {
+    const now = new Date();
+    const month = now.getMonth(); // 0 = Jan, 11 = Dec
+
+    // Northern Hemisphere Logic
+    if (month >= 2 && month <= 4) {
+        return "Spring"; // Mar, Apr, May
+    } else if (month >= 5 && month <= 7) {
+        return "Summer"; // Jun, Jul, Aug
+    } else if (month >= 8 && month <= 10) {
+        return "Autumn"; // Sep, Oct, Nov
+    } else {
+        return "Winter"; // Dec, Jan, Feb
+    }
+}
+
+console.log(`The current season is: ${getSeason()}`);

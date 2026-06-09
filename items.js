@@ -80,7 +80,7 @@ const storeItems = [
     price: '$15.00',
     note: 'HCF merch',
     description: 'Reusable tote featuring the farm brand.',
-    img: 'productPhotos/product-branded-tote-bag.png'
+    img: 'tote-bag.png'
 },
 {
     item: 'Fresh Strawberries',
@@ -104,7 +104,7 @@ const storeItems = [
     price: '$4.50',
     note: 'Limited harvest',
     description: 'Colorful heirloom tomatoes grown without pesticides.',
-    img: 'images/heirloom-tomatoes.jpg'
+    img: ''
 },
 {
     item: 'Fresh Lettuce',
@@ -112,7 +112,7 @@ const storeItems = [
     price: '$3.00',
     note: 'Greenhouse grown',
     description: 'Crisp leafy greens harvested fresh every morning.',
-    img: 'images/fresh-lettuce.jpg'
+    img: 'lettuce.png'
 },
 {
     item: 'Baby Carrots',
@@ -152,7 +152,7 @@ const storeItems = [
     price: '$6.00',
     note: 'Fresh daily',
     description: 'Soft-baked cookies made with farm butter and brown sugar.',
-    img: ''
+    img: 'chocolate-chip-cookies.png'
 },
 {
     item: 'Maple Syrup',
@@ -160,8 +160,147 @@ const storeItems = [
     price: '$16.00',
     note: 'Small-batch',
     description: 'Pure maple syrup bottled locally in glass jars.',
-    img: 'images/maple-syrup.jpg'
+    img: 'maple-syrup.png'
+},
+{
+    item: 'Hollow Creek Hoodie',
+    category: 'Merch',
+    price: '30.00',
+    note: 'Show off HC pride',
+    description: 'Comfy cozy hoodie perfect for the fall season.',
+    img: 'sweatshirt.png'
 }
 
 
 ]
+
+const springEvents = [
+{
+    item: 'Sunflower Field',
+    category: 'Spring',
+    note: 'Mid-May through June',
+    description: 'Walk through the farm’s first sunflower bloom of the year.',
+    img: 'seasonPhotos/spring-sunflowers.jpg'
+},
+{
+    item: 'U-Pick Strawberries & Asparagus',
+    category: 'Spring',
+    note: 'Weekends Only',
+    description: 'Pick fresh strawberries and asparagus directly from the fields.',
+    img: 'seasonPhotos/strawberries-asparagus.jpg'
+},
+{
+    item: 'Baby Animal Barn',
+    category: 'Spring',
+    note: 'Family Favorite',
+    description: 'Meet chicks, ducklings, and baby goats in the barn.',
+    img: 'seasonPhotos/baby-animals.jpg'
+},
+{
+    item: 'Garden Seedlings & Produce',
+    category: 'Spring',
+    note: 'Freshly Grown',
+    description: 'Shop spring produce, seedlings, and transplants for your home garden.',
+    img: 'seasonPhotos/spring-produce.jpg'
+}
+];
+
+const summerEvents = [
+{
+    item: 'Summer Produce Harvest',
+    category: 'Summer',
+    note: 'Fresh Daily',
+    description: 'Enjoy tomatoes, zucchini, cucumbers, peppers, corn, and green beans.',
+    img: 'seasonPhotos/summer-produce.jpg'
+},
+{
+    item: 'Blueberry Picking',
+    category: 'Summer',
+    note: 'July–Early August',
+    description: 'Pick ripe blueberries straight from the bushes.',
+    img: 'seasonPhotos/blueberries.jpg'
+},
+{
+    item: 'Sunflower Bloom',
+    category: 'Summer',
+    note: 'Late July',
+    description: 'A second wave of colorful sunflower fields returns for summer.',
+    img: 'seasonPhotos/summer-sunflowers.jpg'
+},
+{
+    item: 'Farm-to-Table Dinners',
+    category: 'Summer',
+    note: 'Select Saturdays',
+    description: 'Ticketed outdoor dinners featuring seasonal farm ingredients.',
+    img: 'seasonPhotos/farm-dinner.jpg'
+}
+];
+
+const fallEvents = [
+{
+    item: 'Corn Maze',
+    category: 'Fall',
+    note: 'Labor Day Weekend Opening',
+    description: 'Explore a 5-acre corn maze featuring a new design every year.',
+    img: 'seasonPhotos/corn-maze.jpg'
+},
+{
+    item: 'Pumpkin Patch',
+    category: 'Fall',
+    note: '20+ Varieties',
+    description: 'Choose pumpkins from the field or select pre-picked favorites.',
+    img: 'seasonPhotos/pumpkin-patch.jpg'
+},
+{
+    item: 'Weekend Hayrides',
+    category: 'Fall',
+    note: 'Through October',
+    description: 'Take a relaxing hayride around the farm with family and friends.',
+    img: 'seasonPhotos/hayride.jpg'
+},
+{
+    item: 'Fresh Apple Cider',
+    category: 'Fall',
+    note: 'Pressed On-Site',
+    description: 'Watch cider being made and take home a fresh jug.',
+    img: 'seasonPhotos/apple-cider.jpg'
+},
+{
+    item: 'Harvest Festival',
+    category: 'Fall',
+    note: 'Last Two Weekends of October',
+    description: 'Features food vendors, live music, crafts, and family activities.',
+    img: 'seasonPhotos/harvest-festival.jpg'
+},
+{
+    item: 'Fall Decorations',
+    category: 'Fall',
+    note: 'Seasonal Favorites',
+    description: 'Shop gourds, Indian corn, mums, and festive autumn décor.',
+    img: 'seasonPhotos/fall-decor.jpg'
+}
+];
+
+const winterEvents = [
+{
+    item: 'Holiday Market',
+    category: 'Winter',
+    note: 'First Three Weekends of December',
+    description: 'Browse local artisan goods and farm-made holiday gifts.',
+    img: 'seasonPhotos/holiday-market.jpg'
+},
+{
+    item: 'Christmas Trees & Wreaths',
+    category: 'Winter',
+    note: 'Choose-and-Cut Available',
+    description: 'Find the perfect tree or wreath for the holiday season.',
+    img: 'seasonPhotos/christmas-trees.jpg'
+},
+{
+    item: 'Farm Store',
+    category: 'Winter',
+    note: 'Open Year-Round',
+    description: 'Visit the farm store throughout the winter season.',
+    img: 'seasonPhotos/farm-store.jpg'
+}
+];

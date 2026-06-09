@@ -326,6 +326,7 @@ img {
     border-radius: 50%;
     overflow: hidden;
     flex: 0 0 auto; /* prevents Bootstrap col-4 from stretching it */
+       /* border: 5px solid var(--forest-green); */
 }
 
 /* Image inside the circle */
@@ -334,6 +335,8 @@ img {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+
+    transform: scale(1.1);
 }
 
 /* Overlay (hidden by default) */
@@ -395,4 +398,7 @@ img {
     flex-direction:column;
     justify-content:center;
     align-items:center;
+}
+.face-left {
+    object-position: 0% center;
 }
