@@ -173,7 +173,6 @@ const storeItems = [
 
 
 ]
-
 const springEvents = [
 {
     item: 'Sunflower Field',
@@ -202,105 +201,33 @@ const springEvents = [
     note: 'Freshly Grown',
     description: 'Shop spring produce, seedlings, and transplants for your home garden.',
     img: 'seasonPhotos/spring-produce.jpg'
-}
-];
-
-const summerEvents = [
-{
-    item: 'Summer Produce Harvest',
-    category: 'Summer',
-    note: 'Fresh Daily',
-    description: 'Enjoy tomatoes, zucchini, cucumbers, peppers, corn, and green beans.',
-    img: 'seasonPhotos/summer-produce.jpg'
 },
 {
-    item: 'Blueberry Picking',
-    category: 'Summer',
-    note: 'July–Early August',
-    description: 'Pick ripe blueberries straight from the bushes.',
-    img: 'seasonPhotos/blueberries.jpg'
+    item: 'Farm Animal Petting Day',
+    category: 'Spring',
+    note: 'Saturdays',
+    description: 'Interact with friendly farm animals up close.',
+    img: 'seasonPhotos/petting-zoo.jpg'
 },
 {
-    item: 'Sunflower Bloom',
-    category: 'Summer',
-    note: 'Late July',
-    description: 'A second wave of colorful sunflower fields returns for summer.',
-    img: 'seasonPhotos/summer-sunflowers.jpg'
+    item: 'Spring Flower Festival',
+    category: 'Spring',
+    note: 'April Weekend Event',
+    description: 'Celebrate blooming flowers with music and food vendors.',
+    img: 'seasonPhotos/flower-festival.jpg'
 },
 {
-    item: 'Farm-to-Table Dinners',
-    category: 'Summer',
-    note: 'Select Saturdays',
-    description: 'Ticketed outdoor dinners featuring seasonal farm ingredients.',
-    img: 'seasonPhotos/farm-dinner.jpg'
-}
-];
-
-const fallEvents = [
-{
-    item: 'Corn Maze',
-    category: 'Fall',
-    note: 'Labor Day Weekend Opening',
-    description: 'Explore a 5-acre corn maze featuring a new design every year.',
-    img: 'seasonPhotos/corn-maze.jpg'
+    item: 'Butterfly Garden Walk',
+    category: 'Spring',
+    note: 'Seasonal Exhibit',
+    description: 'Walk through a blooming garden filled with butterflies.',
+    img: 'seasonPhotos/butterfly-garden.jpg'
 },
 {
-    item: 'Pumpkin Patch',
-    category: 'Fall',
-    note: '20+ Varieties',
-    description: 'Choose pumpkins from the field or select pre-picked favorites.',
-    img: 'seasonPhotos/pumpkin-patch.jpg'
-},
-{
-    item: 'Weekend Hayrides',
-    category: 'Fall',
-    note: 'Through October',
-    description: 'Take a relaxing hayride around the farm with family and friends.',
-    img: 'seasonPhotos/hayride.jpg'
-},
-{
-    item: 'Fresh Apple Cider',
-    category: 'Fall',
-    note: 'Pressed On-Site',
-    description: 'Watch cider being made and take home a fresh jug.',
-    img: 'seasonPhotos/apple-cider.jpg'
-},
-{
-    item: 'Harvest Festival',
-    category: 'Fall',
-    note: 'Last Two Weekends of October',
-    description: 'Features food vendors, live music, crafts, and family activities.',
-    img: 'seasonPhotos/harvest-festival.jpg'
-},
-{
-    item: 'Fall Decorations',
-    category: 'Fall',
-    note: 'Seasonal Favorites',
-    description: 'Shop gourds, Indian corn, mums, and festive autumn décor.',
-    img: 'seasonPhotos/fall-decor.jpg'
-}
-];
-
-const winterEvents = [
-{
-    item: 'Holiday Market',
-    category: 'Winter',
-    note: 'First Three Weekends of December',
-    description: 'Browse local artisan goods and farm-made holiday gifts.',
-    img: 'seasonPhotos/holiday-market.jpg'
-},
-{
-    item: 'Christmas Trees & Wreaths',
-    category: 'Winter',
-    note: 'Choose-and-Cut Available',
-    description: 'Find the perfect tree or wreath for the holiday season.',
-    img: 'seasonPhotos/christmas-trees.jpg'
-},
-{
-    item: 'Farm Store',
-    category: 'Winter',
-    note: 'Open Year-Round',
-    description: 'Visit the farm store throughout the winter season.',
-    img: 'seasonPhotos/farm-store.jpg'
+    item: 'Farm Workshops',
+    category: 'Spring',
+    note: 'Weekly Classes',
+    description: 'Learn gardening and sustainable farming skills.',
+    img: 'seasonPhotos/workshops.jpg'
 }
 ];

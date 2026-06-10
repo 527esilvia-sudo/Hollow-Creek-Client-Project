@@ -356,3 +356,220 @@ h1, h2, h3, .sectionTitle {
 .circle-item:hover .overlay {
     opacity: 1;
 }
+/* ================================
+   EXPLORE FARM PAGE (MAP THEME)
+================================ */
+
+#exploreHero {
+    background: linear-gradient(
+        rgba(47, 93, 63, 0.75),
+        rgba(123, 45, 38, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1600&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+#exploreHero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* ================================
+   FARM MAP CARD
+================================ */
+
+.mapCard {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #efe4cf;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.mapCard:hover {
+    transform: scale(1.01);
+}
+
+.mapPlaceholder {
+    height: 450px;
+    background: linear-gradient(
+        135deg,
+        #eae0c2,
+        #f7f1e3
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* ================================
+   DIRECTIONS SECTION
+================================ */
+
+.directionsBox {
+    background: #efe4cf;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.directionsList .list-group-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed rgba(0,0,0,0.15);
+    padding-left: 0;
+    color: #6b4f3b;
+}
+
+/* ================================
+   FEATURED AREAS (CARDS)
+================================ */
+
+.featureCard {
+    border-radius: 18px;
+    background: #f7f1e3;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.featureCard:hover {
+    transform: translateY(-6px);
+    background: #efe4cf;
+}
+
+.featureCard i {
+    color: #2f5d3f;
+    margin-bottom: 10px;
+}
+
+/* ================================
+   ACTIVITY CARDS
+================================ */
+
+.activityCard {
+    background: #ffffff;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.activityCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   FAQ ACCORDION
+================================ */
+
+.accordion-button {
+    background: #efe4cf;
+    color: #2f5d3f;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #2f5d3f;
+    color: white;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ================================
+   SECTION SPACING (CLEANER LAYOUT)
+================================ */
+
+section {
+    padding: 70px 0;
+}
+
+/* ================================
+   ICON STYLING (GLOBAL FARM LOOK)
+================================ */
+
+.bi {
+    transition: 0.3s ease;
+}
+
+.bi:hover {
+    transform: scale(1.15);
+    color: #7b2d26;
+}
+
+/* ================================
+   SMALL POLISH
+================================ */
+
+.shadow-soft {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.rounded-xl {
+    border-radius: 20px;
+}
+/* ================================
+   SPLASH SCREEN
+================================ */
+
+#splashScreen {
+    position: fixed;
+    inset: 0;
+    /* background: #2f5d3f; farm green */
+    background: url("https://cdn.stocksnap.io/img-thumbs/280h/sunflowers-farm_MTDPG5UVK0.jpg") center/cover no-repeat;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 9999;
+
+    opacity: 1;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+/* when hidden */
+#splashScreen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splashContent h1 {
+    font-size: 3rem;
+    font-family: "Playfair Display", serif;
+}
+
+.splashContent p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.splashContent {
+    animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
