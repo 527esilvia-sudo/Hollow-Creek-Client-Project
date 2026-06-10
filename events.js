@@ -22,7 +22,16 @@ function seasons() {
 }
 
 if (seasons() === 'Summer') {
-   events.innerHTML = "";
+   events.innerHTML = `
+    <div class="card col-3 ms-5 me-5 mt-5 mb-5">
+        <img class="card-img-top" src="${item.img}" alt="${item.item}" />
+        <div class="card-body">
+            <h4 class="card-title">${item.item}</h4>
+            <p class="card-text">${item.note}</p>
+            <p class="card-text">${item.description}</p>
+        </div>
+    </div>
+    `;
 
 springEvents.forEach(item => {
     events.innerHTML += `
@@ -38,7 +47,16 @@ springEvents.forEach(item => {
 });
 }
 if (seasons() === 'Spring') {
-    events.innerHTML = "";
+    events.innerHTML += `
+    <div class="card col-3 ms-5 me-5 mt-5 mb-5">
+        <img class="card-img-top" src="${item.img}" alt="${item.item}" />
+        <div class="card-body">
+            <h4 class="card-title">${item.item}</h4>
+            <p class="card-text">${item.note}</p>
+            <p class="card-text">${item.description}</p>
+        </div>
+    </div>
+    `;
 
     summerEvents.forEach(item => {
         events.innerHTML += `
