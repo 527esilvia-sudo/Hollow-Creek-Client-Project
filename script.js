@@ -47,8 +47,6 @@ function openModal(title, body) {
     modal.show();
 }
 
-
-
 document.addEventListener("click", (e) => {
     const card = e.target.closest(".modal-card");
 
@@ -60,3 +58,4 @@ document.addEventListener("click", (e) => {
     );
 });
 // AI NO MORE
+
