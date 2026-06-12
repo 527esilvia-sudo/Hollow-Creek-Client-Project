@@ -39,7 +39,7 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         <div class="row">
 <div class="circle-card ms-5">
 
-    <div class="circle-item col-4">
+    <div class="circle-item col-4 modal-card" data-title="John Smith" data-description='<p>Owner and founder of Hollow Creek Farm.</p><p>Built the farm from the ground up with a passion for community and quality.</p>'>
         <img src="old-guy.png" alt="Old Guy">
         <div class="overlay text-light">
             <h3>John Smith</h3>
@@ -47,7 +47,7 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         </div>
     </div>
 
-    <div class="circle-item col-4">
+    <div class="circle-item col-4 modal-card" data-title="Jane Smith" data-description='<p>Co-owner and head of hospitality.</p><p>Ensures every guest feels welcomed and every event is memorable.</p>'>
         <img src="old-lady.png" alt="Old Lady">
         <div class="overlay text-light">
             <h3>Jane Smith</h3>
@@ -55,7 +55,7 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         </div>
     </div>
 
-    <div class="circle-item col-4">
+    <div class="circle-item col-4 modal-card" data-title="Michael Smith" data-description='<p>Farm manager overseeing daily operations.</p><p>Coordinates planting, harvest, and caring for the land year-round.</p>'>
         <img src="middle-guy.png" alt="Middle Guy">
         <div class="overlay text-light">
             <h3>Michael Smith</h3>
@@ -63,7 +63,7 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         </div>
     </div>
 
-    <div class="circle-item col-4">
+    <div class="circle-item col-4 modal-card" data-title="Sarah Smith" data-description='<p>Marketing lead who brings the farm story to life.</p><p>Handles promotions, social media, and community engagement.</p>'>
         <img src="dark-lady.png" alt="Dark Haired Lady">
         <div class="overlay text-light">
             <h3>Sarah Smith</h3>
@@ -71,15 +71,15 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         </div>
     </div>
 
-    <div class="circle-item col-4">
-       <img src="young-guy.png" alt="Young Guy" class="face-left">
+    <div class="circle-item col-4 modal-card" data-title="David Smith" data-description='<p>Field lead and hands-on agricultural specialist.</p><p>Leads the crew in planting, harvesting, and maintaining the farm fields.</p>'>
+       <img class="face-left" src="young-guy.png" alt="Young Guy">
         <div class="overlay text-light">
             <h3>David Smith</h3>
             <p>Field Lead</p>
         </div>
     </div>
 
-    <div class="circle-item col-4">
+    <div class="circle-item col-4 modal-card" data-title="Emily Smith" data-description='<p>Event coordinator who plans farm experiences.</p><p>Creates family-friendly programs and seasonal activities.</p>'>
         <img src="blonde-lady.png" alt="Blonde Lady">
         <div class="overlay text-light">
             <h3>Emily Smith</h3>
@@ -93,6 +93,17 @@ round destination for fresh produce, farm store goods, seasonal events, and fami
         <footer>
            
         </footer>
+        <div class="modal fade" id="genericModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="modalBody"></div>
+                </div>
+            </div>
+        </div>
        
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

@@ -21,86 +21,44 @@ function seasons() {
     }
 }
 
-if (seasons() === 'Summer') {
-   events.innerHTML = `
-    <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-        <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-        <div class="card-body">
-            <h4 class="card-title">${item.item}</h4>
-            <p class="card-text">${item.note}</p>
-            <p class="card-text">${item.description}</p>
-        </div>
-    </div>
-    `;
+function renderEventCards(list) {
+    if (!Array.isArray(list)) return;
+    events.innerHTML = '';
+    list.forEach(item => {
+        events.innerHTML += `
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+        <div class="card h-100">
+            <img
+                class="card-img-top modal-card"
+                src="${item.img}"
+                alt="${item.item}"
+                data-title="${item.item}"
+                data-description="
+                    <p>${item.note}</p>
+                    <p>${item.description}</p>
+                "
+            >
 
-springEvents.forEach(item => {
-    events.innerHTML += `
-    <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-        <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-        <div class="card-body">
-            <h4 class="card-title">${item.item}</h4>
-            <p class="card-text">${item.note}</p>
-            <p class="card-text">${item.description}</p>
+            <div class="card-body">
+                <h4 class="card-title">${item.item}</h4>
+                <p class="card-text">${item.note}</p>
+                <p class="card-text">${item.description}</p>
+            </div>
         </div>
-    </div>
-    `;
-});
+    </div>`;
+    });
+}
+
+if (seasons() === 'Summer') {
+    renderEventCards(springEvents);
 }
 if (seasons() === 'Spring') {
-    events.innerHTML += `
-    <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-        <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-        <div class="card-body">
-            <h4 class="card-title">${item.item}</h4>
-            <p class="card-text">${item.note}</p>
-            <p class="card-text">${item.description}</p>
-        </div>
-    </div>
-    `;
-
-    summerEvents.forEach(item => {
-        events.innerHTML += `
-        <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-            <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-            <div class="card-body">
-                <h4 class="card-title">${item.item}</h4>
-                <p class="card-text">${item.note}</p>
-                <p class="card-text">${item.description}</p>
-            </div>
-        </div>
-        `;
-    });
+    renderEventCards(summerEvents);
 }
 if (seasons() === 'Fall') {
-    events.innerHTML = "";
-
-    fallEvents.forEach(item => {
-        events.innerHTML += `
-        <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-            <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-            <div class="card-body">
-                <h4 class="card-title">${item.item}</h4>
-                <p class="card-text">${item.note}</p>
-                <p class="card-text">${item.description}</p>
-            </div>
-        </div>
-        `;
-    });
+    renderEventCards(fallEvents);
 }
 if (seasons() === 'Winter') {
-    events.innerHTML = "";
-
-    winterEvents.forEach(item => {
-        events.innerHTML += `
-        <div class="card col-3 ms-5 me-5 mt-5 mb-5">
-            <img class="card-img-top" src="${item.img}" alt="${item.item}" />
-            <div class="card-body">
-                <h4 class="card-title">${item.item}</h4>
-                <p class="card-text">${item.note}</p>
-                <p class="card-text">${item.description}</p>
-            </div>
-        </div>
-        `;
-    });
+    renderEventCards(winterEvents);
 }
 seasons()
