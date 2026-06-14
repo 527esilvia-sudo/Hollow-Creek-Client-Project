@@ -25,27 +25,27 @@ function renderEventCards(list) {
     if (!Array.isArray(list)) return;
     events.innerHTML = '';
     list.forEach(item => {
-        events.innerHTML += `
-    <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-        <div class="card h-100">
-            <img
-                class="card-img-top modal-card"
-                src="${item.img}"
-                alt="${item.item}"
-                data-title="${item.item}"
-                data-description="
-                    <p>${item.note}</p>
-                    <p>${item.description}</p>
-                "
-            >
+events.innerHTML += `
+<div class="col-12 col-md-6 d-flex justify-content-center">
+    <div class="card h-100">
+        <img
+            class="card-img-top modal-card"
+            src="${item.img}"
+            alt="${item.item}"
+            data-title="${item.item}"
+            data-description="
+                <p>${item.note}</p>
+                <p>${item.description}</p>
+            "
+        >
 
-            <div class="card-body">
-                <h4 class="card-title">${item.item}</h4>
-                <p class="card-text">${item.note}</p>
-                <p class="card-text">${item.description}</p>
-            </div>
+        <div class="card-body">
+            <h4 class="card-title">${item.item}</h4>
+            <p class="card-text">${item.note}</p>
+            <p class="card-text">${item.description}</p>
         </div>
-    </div>`;
+    </div>
+</div>`;;
     });
 }
 

@@ -179,35 +179,35 @@ const springEvents = [
     category: 'Spring',
     note: 'Mid-May through June',
     description: 'Walk through the farm’s first sunflower bloom of the year.',
-    img: 'seasonPhotos/spring-sunflowers.jpg'
+    img: 'Events/sunflower-event.png'
 },
 {
     item: 'U-Pick Strawberries & Asparagus',
     category: 'Spring',
     note: 'Weekends Only',
     description: 'Pick fresh strawberries and asparagus directly from the fields.',
-    img: 'seasonPhotos/strawberries-asparagus.jpg'
+    img: 'Events/strawberry-event.png'
 },
 {
     item: 'Baby Animal Barn',
     category: 'Spring',
     note: 'Family Favorite',
     description: 'Meet chicks, ducklings, and baby goats in the barn.',
-    img: 'seasonPhotos/baby-animals.jpg'
+    img: 'Events/animals-event.png'
 },
 {
     item: 'Garden Seedlings & Produce',
     category: 'Spring',
     note: 'Freshly Grown',
     description: 'Shop spring produce, seedlings, and transplants for your home garden.',
-    img: 'seasonPhotos/spring-produce.jpg'
+    img: 'Events/seeds-event.png'
 },
 {
     item: 'Farm Animal Petting Day',
     category: 'Spring',
     note: 'Saturdays',
     description: 'Interact with friendly farm animals up close.',
-    img: 'seasonPhotos/petting-zoo.jpg'
+    img: 'Events/animals-event.png'
 },
 {
     item: 'Spring Flower Festival',
@@ -229,5 +229,181 @@ const springEvents = [
     note: 'Weekly Classes',
     description: 'Learn gardening and sustainable farming skills.',
     img: 'seasonPhotos/workshops.jpg'
+}
+];
+const summerEvents = [
+{
+    item: 'Blueberry Picking',
+    category: 'Summer',
+    note: 'July through Early August',
+    description: 'Visit the berry fields and pick fresh blueberries.',
+    img: 'Events/blueberry-event.png'
+},
+{
+    item: 'Farm-to-Table Dinner',
+    category: 'Summer',
+    note: 'Select Saturday Evenings',
+    description: 'Enjoy a ticketed dinner featuring fresh ingredients from the farm.',
+    img: 'Events/table-event.png'
+},
+{
+    item: 'Sunflower U-Pick',
+    category: 'Summer',
+    note: 'Late July Bloom',
+    description: 'Walk the rows and cut your own sunflower bouquet.',
+    img: 'Events/sunflower-event.png'
+},
+{
+    item: 'Sweet Corn Harvest',
+    category: 'Summer',
+    note: 'Fresh Daily',
+    description: 'Pick up freshly harvested sweet corn from the farm market.',
+    img: 'Events/corn-event.png'
+},
+{
+    item: 'Summer Picnic Days',
+    category: 'Summer',
+    note: 'Weekends',
+    description: 'Relax outdoors with picnic areas and farm views.',
+    img: 'Events/picnic-event.png'
+},
+{
+    item: 'Farm Camp Activities',
+    category: 'Summer',
+    note: 'Family Fun',
+    description: 'Hands-on activities, games, and educational farm experiences.',
+    img: 'Events/camp-event.png'
+},
+{
+    item: 'Garden Tours',
+    category: 'Summer',
+    note: 'Guided Walks',
+    description: 'Explore seasonal flowers, vegetables, and growing techniques.',
+    img: 'Events/garden-tour-event.png'
+},
+{
+    item: 'Ice Cream Social',
+    category: 'Summer',
+    note: 'Special Event',
+    description: 'Enjoy local ice cream and live entertainment on the farm.',
+    img: 'Events/icecream-event.png'
+}
+];
+
+const fallEvents = [
+{
+    item: 'Corn Maze',
+    category: 'Fall',
+    note: 'Labor Day through November',
+    description: 'Navigate a 5-acre maze with a new design each year.',
+    img: 'Events/maze-event.png'
+},
+{
+    item: 'Pumpkin Patch',
+    category: 'Fall',
+    note: 'September through November',
+    description: 'Choose from more than 20 varieties of pumpkins.',
+    img: 'Events/pumpkin-event.png'
+},
+{
+    item: 'Hayrides',
+    category: 'Fall',
+    note: 'Weekends through October',
+    description: 'Enjoy tractor-pulled wagon rides around the farm.',
+    img: 'Events/hayride-event.png'
+},
+{
+    item: 'Apple Cider Pressing',
+    category: 'Fall',
+    note: 'September through November',
+    description: 'Watch fresh cider being made and take a jug home.',
+    img: 'Events/cider-event.png'
+},
+{
+    item: 'Fall Harvest Festival',
+    category: 'Fall',
+    note: 'Last Two Weekends of October',
+    description: 'Enjoy food vendors, live music, crafts, and farm fun.',
+    img: 'Events/festival-event.png'
+},
+{
+    item: 'Pumpkin Decorating',
+    category: 'Fall',
+    note: 'Family Activity',
+    description: 'Decorate pumpkins with paints, markers, and seasonal designs.',
+    img: 'Events/decorate-event.png'
+},
+{
+    item: 'Scarecrow Workshop',
+    category: 'Fall',
+    note: 'Weekend Event',
+    description: 'Build and customize your own scarecrow to take home.',
+    img: 'Events/scarecrow-event.png'
+},
+{
+    item: 'Autumn Photo Days',
+    category: 'Fall',
+    note: 'Seasonal Favorite',
+    description: 'Capture family photos among colorful fall displays.',
+    img: 'Events/photo-event.png'
+}
+];
+
+const winterEvents = [
+{
+    item: 'Holiday Market',
+    category: 'Winter',
+    note: 'First Three Weekends of December',
+    description: 'Shop artisan goods, wreaths, gifts, and seasonal treats.',
+    img: 'Events/holidaymarket-event.png'
+},
+{
+    item: 'Wreath Making Workshop',
+    category: 'Winter',
+    note: 'December Weekends',
+    description: 'Create a festive wreath using fresh greenery.',
+    img: 'Events/wreath-event.png'
+},
+{
+    item: 'Holiday Lights Display',
+    category: 'Winter',
+    note: 'Evenings',
+    description: 'Walk through the farm decorated with seasonal lights.',
+    img: 'Events/lights-event.png'
+},
+{
+    item: 'Hot Cocoa Nights',
+    category: 'Winter',
+    note: 'Family Event',
+    description: 'Warm up with hot cocoa and holiday treats.',
+    img: 'Events/cocoa-event.png'
+},
+{
+    item: 'Christmas Tree Sales',
+    category: 'Winter',
+    note: 'Seasonal',
+    description: 'Choose a fresh-cut tree for your holiday celebrations.',
+    img: 'Events/christmas-event.png'
+},
+{
+    item: 'Winter Farm Market',
+    category: 'Winter',
+    note: 'Limited Seasonal Produce',
+    description: 'Shop winter vegetables, baked goods, and preserves.',
+    img: 'Events/wintermarket-event.png'
+},
+{
+    item: 'Holiday Craft Fair',
+    category: 'Winter',
+    note: 'Local Vendors',
+    description: 'Browse handmade crafts and unique gift items.',
+    img: 'Events/craftfair-event.png'
+},
+{
+    item: 'Santa Visits the Farm',
+    category: 'Winter',
+    note: 'December Special Event',
+    description: 'Meet Santa and take photos with family and friends.',
+    img: 'Events/santa-event.png'
 }
 ];

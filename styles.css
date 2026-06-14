@@ -307,8 +307,9 @@ h1, h2, h3, .sectionTitle {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: flex-start; /* or center if you prefer */
+    justify-content: center; /* centers the whole grid */
 }
+
 
 /* Each individual circle */
 .circle-item {
@@ -317,7 +318,10 @@ h1, h2, h3, .sectionTitle {
     height: 220px;
     border-radius: 50%;
     overflow: hidden;
-    flex: 0 0 auto; /* prevents Bootstrap col-4 from stretching it */
+    flex: 0 0 220px; /* fixes alignment + prevents overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Image inside the circle */
@@ -326,15 +330,14 @@ h1, h2, h3, .sectionTitle {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    transform: scale(1.1);
+    transform: scale(1.08);
+    transition: transform 0.25s ease;
     cursor: pointer;
 }
+
+/* Special left-positioned face */
 .face-left {
     object-position: 0% center;
-}
-.circle-item {
-    position: relative;
-    overflow: hidden;
 }
 
 /* =========================
@@ -605,3 +608,36 @@ width:500px;
      background-size: cover;
 width:500px;
 }
+
+.row-break {
+  flex-basis: 100%;
+  height: 0;
+}
+/* Specific fix for Sam Calloway's image */
+.sam-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;     /* forces stretching instead of cropping */
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+.sam-img {
+  width: 120%;          /* upscale beyond container */
+  height: 120%;
+  object-fit: cover;    /* keeps proportions but zooms in */
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+border:#e51414 solid 20px;
+}
+.circle-item img.sam-img {
+  width: 130% !important;
+  height: 130% !important;
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+
+
