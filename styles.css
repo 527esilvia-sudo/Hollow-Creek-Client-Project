@@ -683,11 +683,16 @@ border:#e51414 solid 20px;
   position: absolute;
   cursor: pointer;
   border-radius: 50%;
-  transition: box-shadow 0.3s ease;
-  border: 2px solid rgba(255, 42, 0, 0.8);
+  background: rgba(255,255,255,0.15);
+  transition: 0.3s ease;
 }
-.hayride { top: 60%; left: 30%; width: 80px; height: 80px; }
-.strawberries { top: 25%; left: 45%; width: 60px; height: 60px; }
+
+/* Standard sizes converted to % */
+.hotspot.size-sm { width: 4.1%; height: 5.5%; }
+.hotspot.size-md { width: 4.8%; height: 6.4%; }
+.hotspot.size-lg { width: 6.9%; height: 9.2%; }
+
+
 .hotspot:hover {
   box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.6);
 }
@@ -720,21 +725,6 @@ border:#e51414 solid 20px;
   border-radius: 20px;
 }
 
-.hotspot {
-  position: absolute;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 42, 0, 0.8);
-  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
-  background: rgba(255, 255, 255, 0.15); /* subtle clickable cue */
-}
-
-/* Hover = glow + slight scale + brighter center */
-.hotspot:hover {
-  box-shadow: 0 0 25px 12px rgba(255, 215, 0, 0.7);
-  transform: scale(1.12);
-  background: rgba(255, 255, 255, 0.35);
-}
 
 
 /* Tooltip styling */
@@ -753,24 +743,65 @@ border:#e51414 solid 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   pointer-events: none;
 }
+/* Responsive hotspot sizes */
+.hotspot.size-sm { width: 5.2%; height: 7%; }
+.hotspot.size-md { width: 6.0%; height: 8%; }
+.hotspot.size-lg { width: 8.5%; height: 11%; }
+.hotspot {
+  transform: scale(1.25);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
 
-.sunflower { top: 25%; left: 9.5%; width: 70px; height: 70px; }
-.strawberry { top: 22%; left: 33%; width: 60px; height: 60px; }
-.blueberry { top: 27.1%; left: 59.3%; width: 60px; height: 60px; }
-.cornmaze { top: 17.9%; left: 81.6%; width: 80px; height: 80px; }
-.pumpkin { top: 44.8%; left: 74.2%; width: 70px; height: 70px; }
-.animalbarn { top: 39.2%; left: 54.8%; width: 60px; height: 60px; }
-.mainbarn { top: 44.3%; left: 39.6%; width: 70px; height: 70px; }
-.orchard { top: 51%; left: 9%; width: 70px; height: 70px; }
-.farmstore { top: 49.6%; left: 34.5%; width: 60px; height: 60px; }
-.pavilion { top: 59.2%; left: 40.5%; width: 60px; height: 60px; }
-.restrooms { top: 52.7%; left: 53%; width: 50px; height: 50px; }
-.picnic { top: 66.8%; left: 56%; width: 70px; height: 70px; }
-.pond { top: 52.5%; left: 77.3%; width: 70px; height: 70px; }
-.creek { top: 74.8%; left: 69.8%; width: 80px; height: 80px; }
-.entrance { top: 83.6%; left: 19.8%; width: 70px; height: 70px; }
-.parking { top: 84.6%; left: 29.8%; width: 70px; height: 70px; }
-.hayride { top: 59.5%; left: 29.8%; width: 100px; height: 100px; border-radius: 50%; }
+
+.sunflower { top: 25%; left: 9.5%; }
+.sunflower.size-md {}
+
+.strawberry { top: 22%; left: 33%; }
+.strawberry.size-sm {}
+
+.blueberry { top: 22.1%; left: 54%; }
+.blueberry.size-sm {}
+
+.cornmaze { top: 19.9%; left: 76.6%; width: 5.5%; height: 7.3%; }
+
+.pumpkin { top: 38%; left: 77%; }
+.pumpkin.size-md {}
+
+.animalbarn { top: 32%; left: 52%; }
+.animalbarn.size-sm {}
+
+.mainbarn { top: 38%; left: 34%; }
+.mainbarn.size-md {}
+
+.orchard { top: 51%; left: 9%; }
+.orchard.size-md {}
+
+.farmstore { top: 49.6%; left: 31%; }
+.farmstore.size-sm {}
+
+.pavilion { top: 59.2%; left: 40.5%; }
+.pavilion.size-sm {}
+
+.restrooms { top: 52.7%; left: 53%; width: 3.4%; height: 4.6%; }
+
+.picnic { top: 66.8%; left: 56%; }
+.picnic.size-md {}
+
+.pond { top: 52.5%; left: 77.3%; }
+.pond.size-md {}
+
+.creek { top: 74.8%; left: 69.8%; width: 5.5%; height: 7.3%; }
+
+.entrance { top: 82%; left: 4%; }
+.entrance.size-md {}
+
+.parking { top: 82%; left: 24%; }
+.parking.size-md {}
+
+.hayride { top: 59.5%; left: 29.8%; }
+.hayride.size-lg { border-radius: 50%; }
+
+
 
 
 
@@ -783,3 +814,6 @@ border:#e51414 solid 20px;
   animation: glowPulse 1.5s infinite;
 }
 
+.navbar-brand {
+    margin-left: -50px !important;
+}
