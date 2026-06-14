@@ -22,7 +22,6 @@ function seasons() {
 }
 
 function renderEventCards(list) {
-    if (!Array.isArray(list)) return;
     events.innerHTML = '';
     list.forEach(item => {
 events.innerHTML += `
@@ -49,11 +48,12 @@ events.innerHTML += `
     });
 }
 
+function checkSeason(){
 if (seasons() === 'Summer') {
-    renderEventCards(springEvents);
+    renderEventCards(summerEvents);
 }
 if (seasons() === 'Spring') {
-    renderEventCards(summerEvents);
+    renderEventCards(springEvents);
 }
 if (seasons() === 'Fall') {
     renderEventCards(fallEvents);
@@ -62,3 +62,30 @@ if (seasons() === 'Winter') {
     renderEventCards(winterEvents);
 }
 seasons()
+}
+checkSeason()
+
+function clickFallBtn(){
+    renderEventCards(fallEvents);
+    console.log('Fall button clicked');
+
+}
+function clickWinterBtn(){
+    renderEventCards(winterEvents);
+    console.log('Winter button clicked');
+
+}
+function clickSpringBtn(){
+    renderEventCards(springEvents);
+    console.log('Spring button clicked');
+
+}
+function clickSummerBtn(){
+    renderEventCards(summerEvents);
+    console.log('Summer button clicked');
+
+}
+function clickCurrentSeasonBtn(){
+checkSeason()
+
+}
