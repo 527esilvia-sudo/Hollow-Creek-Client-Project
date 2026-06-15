@@ -31,9 +31,34 @@ html {
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
+#mainNavbar .container {
+    max-width: 100% !important;
+    width: 100%;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+}
+
 .navbar-brand {
     color: #2f5d3f !important;
     font-size: 1.7rem;
+    margin: 0;
+    padding-left: 0;
+}
+
+#mainNavbar .navbar {
+    flex-wrap: wrap;
+}
+
+#mainNavbar .navbar-nav {
+    flex-wrap: wrap;
+}
+
+#mainNavbar .navbar-collapse {
+    justify-content: flex-end;
+}
+
+#mainNavbar .navbar-toggler {
+    margin-left: auto;
 }
 
 .navBtn {
@@ -715,13 +740,16 @@ border:#e51414 solid 20px;
 
 .map-container {
   position: relative;
-  width: 100%;
+  display: inline-block;
+  width: auto;
   max-width: 1024px;
 }
 
 .farm-map {
-  width: 100%;
   display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 
@@ -812,8 +840,4 @@ border:#e51414 solid 20px;
 }
 .hayride:hover {
   animation: glowPulse 1.5s infinite;
-}
-
-.navbar-brand {
-    margin-left: -50px !important;
 }

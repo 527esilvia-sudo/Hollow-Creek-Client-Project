@@ -80,14 +80,27 @@
         <section class="py-5">
             <div class="container">
                 <div class="container text-center">
-                    <button type="button" onclick="clickCurrentSeasonBtn()"  name="" id="" class="btn btn-primary">
-                        Events Available Now
-                    </button>
-                    <button type="button" onclick="clickFallBtn()" name="" id="fallBtn" class="btn btn-primary mx-3">Fall Events</button>
-                    <button type="button"onclick="clickWinterBtn()" name="" id="winterBtn" class="btn btn-primary mx-3">Winter Events</button>
-                    <button type="button" onclick="clickSpringBtn()" name="" id="" class="btn btn-primary mx-3">Spring Events</button>
-                     <button type="button" onclick="clickSummerBtn()" name="" id="" class="btn btn-primary mx-3">Summer Events</button>
-                </div>
+               <button type="button" onclick="clickCurrentSeasonBtn()" class="btn btn-primary">
+    Events Available Now
+</button>
+
+<button data-season="fall" type="button" onclick="clickFallBtn()" id="fallBtn" class="season-btn btn btn-primary mx-3">
+    Fall Events
+</button>
+
+<button data-season="winter" type="button" onclick="clickWinterBtn()" id="winterBtn" class="season-btn btn btn-primary mx-3">
+    Winter Events
+</button>
+
+<button data-season="spring" type="button" onclick="clickSpringBtn()" class="season-btn btn btn-primary mx-3">
+    Spring Events
+</button>
+
+<button data-season="summer" type="button" onclick="clickSummerBtn()" class="season-btn btn btn-primary mx-3">
+    Summer Events
+</button>
+</div>
+
 
 
                 <h2 class="sectionTitle text-center mb-4">Upcoming Events</h2>

@@ -89,3 +89,19 @@ function clickCurrentSeasonBtn(){
 checkSeason()
 
 }
+
+function removeButton() {
+    const season = seasons().toLowerCase(); // "spring", "summer", etc.
+    const btnList = document.querySelectorAll('.season-btn');
+
+    btnList.forEach(btn => {
+        const btnSeason = btn.dataset.season.toLowerCase();
+        if (btnSeason === season) {
+            btn.style.display = "none"; // hide the current season button
+        }
+    });
+}
+
+window.addEventListener('load', removeButton);
+
+
