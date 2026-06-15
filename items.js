@@ -279,14 +279,14 @@ const summerEvents = [
     category: 'Summer',
     note: 'Guided Walks',
     description: 'Explore seasonal flowers, vegetables, and growing techniques.',
-    img: 'Events/garden-tour-event.png'
+    img: 'Events/garden-event.png'
 },
 {
-    item: 'Ice Cream Social',
+    item: 'Goat Yoga',
     category: 'Summer',
     note: 'Special Event',
     description: 'Enjoy local ice cream and live entertainment on the farm.',
-    img: 'Events/icecream-event.png'
+    img: 'Events/yoga-event.png'
 }
 ];
 
