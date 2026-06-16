@@ -13,7 +13,9 @@ window.addEventListener("load", () => {
         }, 2000);
     }
 });
-
+function makeId(name) {
+    return name.toLowerCase().replace(/\s+/g, "-");
+}
 /* ============================
    STORE ITEM CARDS
 ============================ */
@@ -27,9 +29,8 @@ if (card) {
             class="bi bi-cart-plus add-cart"
             data-item="${item.item}">
         </i>
-
-        <img
-            class="card-img-top modal-card"
+<div class="cart-badge" id="badge-${makeId(item.item)}">0</div>
+            <img class="card-img-top modal-card"
             src="${item.img}"
             alt="${item.item}"
             data-item="${item.item}"
@@ -56,9 +57,10 @@ if (card) {
 function addToCart(itemName) {
     cart[itemName] = (cart[itemName] || 0) + 1;
 
+    updateBadge(itemName);
+
     console.log(cart);
 }
-
 /* ============================
    MODAL HANDLER
 ============================ */
@@ -81,7 +83,25 @@ function openModal(title, body, itemName) {
 
     modal.show();
 }
+function updateBadge(itemName) {
+    const badge = document.getElementById(`badge-${makeId(itemName)}`);
 
+    if (!badge) return;
+
+    const count = cart[itemName];
+
+    badge.textContent = count;
+
+    // show badge if > 0
+    if (count > 0) {
+        badge.classList.add("show");
+    }
+
+    // restart animation
+    badge.classList.remove("pop");
+    void badge.offsetWidth;
+    badge.classList.add("pop");
+}
 /* ============================
    STORE EVENTS
 ============================ */

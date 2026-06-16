@@ -88,7 +88,7 @@ const storeItems = [
     price: '$18.00',
     note: 'Embroidered logo',
     description: 'Classic curved-brim cap featuring the Hollow Creek Farm logo stitched on the front.',
-    img: 'productPhotos/product-hollow-creek-hat.png'
+    img: 'hat.png'
 },
 {
     item: 'Hollow Creek Farm Mug',
@@ -96,7 +96,7 @@ const storeItems = [
     price: '$14.00',
     note: 'Ceramic',
     description: 'Rustic ceramic mug perfect for coffee, tea, or early morning barn chills.',
-    img: 'productPhotos/product-hollow-creek-mug.png'
+    img: 'mug.png'
 },
 {
     item: 'Fresh Strawberries',
@@ -120,7 +120,7 @@ const storeItems = [
     price: '$4.50',
     note: 'Limited harvest',
     description: 'Colorful heirloom tomatoes grown without pesticides.',
-    img: ''
+    img: 'tomatoes.png'
 },
 {
     item: 'Fresh Lettuce',
@@ -136,7 +136,7 @@ const storeItems = [
     price: '$4.00',
     note: 'Kid favorite',
     description: 'Naturally sweet carrots cleaned and bundled fresh.',
-    img: 'images/baby-carrots.jpg'
+    img: 'baby.png'
 },
 {
     item: 'Homemade Pumpkin Butter',

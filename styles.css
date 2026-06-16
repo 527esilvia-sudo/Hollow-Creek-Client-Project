@@ -561,6 +561,9 @@ section {
     color: #7b2d26;
 }
 
+/* Ensure product cart icon stays beneath the badge */
+
+
 /* ================================
    SMALL POLISH
 ================================ */
@@ -697,13 +700,17 @@ border:#e51414 solid 20px;
         /* position left */
 }
 .map-container {
-  position: relative;
-  width: 100%;
-  max-width: 1024px;
+    position: relative;
+    display: inline-block; /* shrink-wrap to the image */
+    line-height: 0; /* remove inline gap below img */
+    max-width: 1024px; /* don't exceed layout max */
+    padding: 5px; /* make container slightly larger than the image */
+    box-sizing: content-box; /* padding adds extra space around image */
 }
 .farm-map {
-  width: 100%;
-  display: block;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .hotspot {
   position: absolute;
@@ -740,18 +747,19 @@ border:#e51414 solid 20px;
 ================================ */
 
 .map-container {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  max-width: 1024px;
+    position: relative;
+    display: inline-block; /* shrink-wrap to the contained image */
+    line-height: 0;
+    max-width: 1024px;
+    padding: 5px; /* 5px larger than the image */
+    box-sizing: content-box;
 }
 
 .farm-map {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
 
@@ -1046,4 +1054,54 @@ border:#e51414 solid 20px;
 }
 .face-left {
     object-position: 0% center;
+}
+.card {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 22px;
+    height: 22px;
+
+    background: #800020;
+    color: white;
+
+    border-radius: 50%;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+
+    /* no explicit z-index here; stacking controlled by layout */
+
+    /* hidden by default */
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* show when it has a value */
+.cart-badge.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.cart-badge.pop {
+    animation: badgePop 0.25s ease;
+}
+
+@keyframes badgePop {
+    0% { transform: scale(0.6); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
 }
