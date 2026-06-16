@@ -389,6 +389,7 @@ h1, h2, h3, .sectionTitle {
 /* THIS is what you're missing */
 .circle-item:hover .overlay {
     opacity: 1;
+    color:white;
 }
 /* ================================
    EXPLORE FARM PAGE (MAP THEME)
@@ -901,4 +902,148 @@ border:#e51414 solid 20px;
     transform: none;
     color: white;
     background: rgba(0, 0, 0, 0.85);
+}/* ================================
+   SEASONAL CAROUSEL CARDS
+================================ */
+
+.seasonal-wrapper {
+    overflow: hidden;
+}
+
+.card-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollSeasonal 30s linear infinite;
+    padding: 10px 0;
+}
+
+/* pause on hover */
+.card-track:hover {
+    animation-play-state: paused;
+}
+
+/* each card in carousel */
+.seasonal-card {
+    flex: 0 0 260px;
+}
+
+.seasonal-card .card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+}
+
+/* smoother image fit */
+.seasonal-card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* animation */
+@keyframes scrollSeasonal {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.family-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* each generation row */
+.tree-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* couples grouped tightly */
+.couple {
+    display: flex;
+    gap: 80px;
+}
+
+/* children spread wide like reference image */
+.children {
+    justify-content: space-evenly;
+    max-width: 1100px;
+}
+
+/* STRONG vertical connector lines */
+.connector.vertical {
+    width: 4px;              /* thicker line */
+    height: 80px;            /* longer like reference */
+    background: #2f5d3f;     /* darker = more visible */
+    border-radius: 10px;
+    opacity: 0.6;
+}
+
+
+.family-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* generations */
+.tree-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.couple {
+    display: flex;
+    gap: 80px;
+}
+
+.children {
+    justify-content: space-evenly;
+    max-width: 1100px;
+}
+
+/* strong connectors like ancestry charts */
+.connector.vertical {
+    width: 5px;
+    height: 90px;
+    background: #2f5d3f;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+/* STAFF SECTION NOW FEELS LIKE A “LAYER” */
+.farm-layer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 3px dashed rgba(47,93,63,0.3);
+}
+
+.staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.circle-item {
+    width: 180px;
+    aspect-ratio: 1 / 1;   /* 🔥 this is the key fix */
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.face-left {
+    object-position: 0% center;
 }
