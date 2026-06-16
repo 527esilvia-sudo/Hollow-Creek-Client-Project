@@ -99,3 +99,52 @@ hotspots.forEach(h => {
         openModal(title, `<p>${info}</p>`);
     });
 });
+const seasonalTrack = document.getElementById("seasonalTrack");
+
+
+function createCard(item) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "seasonal-card";
+
+    wrapper.innerHTML = `
+        <div class="card h-100 shadow-sm modal-card">
+
+            <img
+                src="${item.img}"
+                alt="${item.item}"
+                class="card-img-top"
+                data-title="${item.item}"
+                data-description="
+                    <p><strong>Price:</strong> ${item.price}</p>
+                    <p>${item.note}</p>
+                    <p>${item.description}</p>
+                "
+            >
+
+            <div class="card-body text-center">
+                <h5 class="card-title mb-0">${item.item}</h5>
+            </div>
+
+        </div>
+    `;
+
+    return wrapper;
+}
+function loadSeasonalPreview(items) {
+    const seasonalItems = items.slice(0, 8); // pick featured ones
+
+    seasonalTrack.innerHTML = "";
+
+    // first set
+    seasonalItems.forEach(item => {
+        seasonalTrack.appendChild(createCard(item));
+    });
+
+    // duplicate set (for seamless loop)
+    seasonalItems.forEach(item => {
+        seasonalTrack.appendChild(createCard(item));
+    });
+}
+if (seasonalTrack && typeof storeItems !== "undefined") {
+    loadSeasonalPreview(storeItems);
+}

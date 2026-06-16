@@ -200,7 +200,7 @@ const springEvents = [
     category: 'Spring',
     note: 'Freshly Grown',
     description: 'Shop spring produce, seedlings, and transplants for your home garden.',
-    img: 'Events/seeds-event.png'
+    img: 'Events/seedlings-event.png'
 },
 {
     item: 'Farm Animal Petting Day',
@@ -214,21 +214,21 @@ const springEvents = [
     category: 'Spring',
     note: 'April Weekend Event',
     description: 'Celebrate blooming flowers with music and food vendors.',
-    img: 'seasonPhotos/flower-festival.jpg'
+    img: 'Events/festival-event.png'
 },
 {
     item: 'Butterfly Garden Walk',
     category: 'Spring',
     note: 'Seasonal Exhibit',
     description: 'Walk through a blooming garden filled with butterflies.',
-    img: 'seasonPhotos/butterfly-garden.jpg'
+    img: 'Events/butterfly-event.png'
 },
 {
     item: 'Farm Workshops',
     category: 'Spring',
     note: 'Weekly Classes',
     description: 'Learn gardening and sustainable farming skills.',
-    img: 'seasonPhotos/workshops.jpg'
+    img: 'Events/workshop-event.png'
 }
 ];
 const summerEvents = [
@@ -331,7 +331,7 @@ const fallEvents = [
     category: 'Fall',
     note: 'Family Activity',
     description: 'Decorate pumpkins with paints, markers, and seasonal designs.',
-    img: 'Events/decorate-event.png'
+    img: 'Events/decorating-event.png'
 },
 {
     item: 'Scarecrow Workshop',
@@ -345,7 +345,7 @@ const fallEvents = [
     category: 'Fall',
     note: 'Seasonal Favorite',
     description: 'Capture family photos among colorful fall displays.',
-    img: 'Events/photo-event.png'
+    img: 'Events/autumn-event.png'
 }
 ];
 
@@ -355,7 +355,7 @@ const winterEvents = [
     category: 'Winter',
     note: 'First Three Weekends of December',
     description: 'Shop artisan goods, wreaths, gifts, and seasonal treats.',
-    img: 'Events/holidaymarket-event.png'
+    img: 'Events/winter-event.png'
 },
 {
     item: 'Wreath Making Workshop',
@@ -390,14 +390,14 @@ const winterEvents = [
     category: 'Winter',
     note: 'Limited Seasonal Produce',
     description: 'Shop winter vegetables, baked goods, and preserves.',
-    img: 'Events/wintermarket-event.png'
+    img: 'Events/winter-event.png'
 },
 {
     item: 'Holiday Craft Fair',
     category: 'Winter',
     note: 'Local Vendors',
     description: 'Browse handmade crafts and unique gift items.',
-    img: 'Events/craftfair-event.png'
+    img: 'Events/craft-event.png'
 },
 {
     item: 'Santa Visits the Farm',
