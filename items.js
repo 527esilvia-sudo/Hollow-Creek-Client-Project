@@ -72,7 +72,7 @@ const storeItems = [
     price: '$14.00',
     note: 'From farm hives',
     description: 'Handmade candles from Hollow Creek beeswax.',
-    img: 'productPhotos/product-beeswax-candles.png'
+    img: 'candle.png'
 },
 {
     item: 'Branded Tote Bag',
@@ -83,12 +83,28 @@ const storeItems = [
     img: 'tote-bag.png'
 },
 {
+    item: 'Hollow Creek Farm Hat',
+    category: 'Merch',
+    price: '$18.00',
+    note: 'Embroidered logo',
+    description: 'Classic curved-brim cap featuring the Hollow Creek Farm logo stitched on the front.',
+    img: 'productPhotos/product-hollow-creek-hat.png'
+},
+{
+    item: 'Hollow Creek Farm Mug',
+    category: 'Merch',
+    price: '$14.00',
+    note: 'Ceramic',
+    description: 'Rustic ceramic mug perfect for coffee, tea, or early morning barn chills.',
+    img: 'productPhotos/product-hollow-creek-mug.png'
+},
+{
     item: 'Fresh Strawberries',
     category: 'Produce',
     price: '$5.00',
     note: 'Picked daily',
     description: 'Sweet seasonal strawberries harvested fresh each morning.',
-    img: 'productPhotos/product-fresh-strawberries-basket.png'
+    img: 'strawberries.png'
 },
 {
     item: 'Sweet Corn',
@@ -96,7 +112,7 @@ const storeItems = [
     price: '$1.00',
     note: 'Summer favorite',
     description: 'Locally grown corn picked at peak sweetness.',
-    img: 'images/sweet-corn.jpg'
+    img: 'corn.png'
 },
 {
     item: 'Heirloom Tomatoes',
