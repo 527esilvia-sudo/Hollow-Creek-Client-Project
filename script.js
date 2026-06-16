@@ -1,13 +1,17 @@
 /* ============================
    SPLASH SCREEN
 ============================ */
-const card = document.getElementById('row-items');
+const card = document.getElementById("row-items");
+const cart = {};
 
 window.addEventListener("load", () => {
     const splash = document.getElementById("splashScreen");
-    setTimeout(() => {
-        splash.classList.add("fade-out");
-    }, 2000);
+
+    if (splash) {
+        setTimeout(() => {
+            splash.classList.add("fade-out");
+        }, 2000);
+    }
 });
 
 /* ============================
@@ -15,14 +19,20 @@ window.addEventListener("load", () => {
 ============================ */
 if (card) {
     storeItems.forEach(item => {
-      card.innerHTML += `
+        card.innerHTML += `
 <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
     <div class="card h-100 position-relative overflow-hidden">
+
+        <i
+            class="bi bi-cart-plus add-cart"
+            data-item="${item.item}">
+        </i>
 
         <img
             class="card-img-top modal-card"
             src="${item.img}"
             alt="${item.item}"
+            data-item="${item.item}"
             data-title="${item.item}"
             data-description="
                 <p><strong>Price:</strong> ${item.price}</p>
@@ -41,61 +51,90 @@ if (card) {
 }
 
 /* ============================
+   CART FUNCTIONS
+============================ */
+function addToCart(itemName) {
+    cart[itemName] = (cart[itemName] || 0) + 1;
+
+    console.log(cart);
+}
+
+/* ============================
    MODAL HANDLER
 ============================ */
-function openModal(title, body) {
+function openModal(title, body, itemName) {
     document.getElementById("modalTitle").innerHTML = title;
-    document.getElementById("modalBody").innerHTML = body;
+
+    document.getElementById("modalBody").innerHTML = `
+        ${body}
+
+        <button
+            class="btn btn-success mt-3"
+            onclick="addToCart('${itemName}')">
+            Add to Cart
+        </button>
+    `;
 
     const modal = new bootstrap.Modal(
         document.getElementById("genericModal")
     );
+
     modal.show();
 }
 
 /* ============================
-   STORE CARD CLICK → MODAL
+   STORE EVENTS
 ============================ */
 document.addEventListener("click", (e) => {
-    const card = e.target.closest(".modal-card");
-    if (card) {
+
+    /* Cart Icon On Product */
+    const cartBtn = e.target.closest(".add-cart");
+
+    if (cartBtn) {
+        addToCart(cartBtn.dataset.item);
+        return;
+    }
+
+    /* Product Image */
+    const product = e.target.closest(".modal-card");
+
+    if (product) {
         openModal(
-            card.dataset.title,
-            card.dataset.description
+            product.dataset.title,
+            product.dataset.description,
+            product.dataset.item
         );
     }
 });
 
 /* ============================
-   INTERACTIVE MAP HOTSPOTS
+   VIEW CART
 ============================ */
-const hotspots = document.querySelectorAll('.hotspot');
+const cartIcon = document.getElementById("cart-icon");
 
-/* Tooltip on hover */
-hotspots.forEach(h => {
-    h.addEventListener('mouseenter', () => {
-        if (h.querySelector('.tooltip')) return;
+if (cartIcon) {
+    cartIcon.addEventListener("click", () => {
 
-        const info = document.createElement('div');
-        info.className = 'tooltip';
-        info.textContent = h.dataset.info;
-        h.appendChild(info);
+        let output = "";
+
+        for (const item in cart) {
+            output += `
+                <p>
+                    <strong>${item}</strong> × ${cart[item]}
+                </p>
+            `;
+        }
+
+        if (!output) {
+            output = "<p>Your cart is empty.</p>";
+        }
+
+        document.getElementById("cartContents").innerHTML = output;
+
+        const modal = new bootstrap.Modal(
+            document.getElementById("cartModal")
+        );
+
+        modal.show();
     });
-
-    h.addEventListener('mouseleave', () => {
-        const tip = h.querySelector('.tooltip');
-        if (tip) tip.remove();
-    });
-});
-
-/* ============================
-   HOTSPOT CLICK → MODAL
-============================ */
-hotspots.forEach(h => {
-    h.addEventListener('click', () => {
-        const title = h.dataset.title || "Farm Area";
-        const info = h.dataset.info || "More information coming soon.";
-
-        openModal(title, `<p>${info}</p>`);
-    });
-});
+}
