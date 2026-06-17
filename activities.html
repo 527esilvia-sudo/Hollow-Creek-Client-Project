@@ -28,30 +28,32 @@
         </div>
 
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
-            <div class="container">
+        <div class="container">
+  
+            <a class="navbar-brand fw-bold" href="index.html"> <img class="me-4 ms-0 px-0 py-0" src="hclogo.png" alt="Logo" height="50"> Hollow Creek Farms
+                
+            </a>
 
-                <a class="navbar-brand fw-bold" href="index.html">
-                    <img class="me-3" src="Logos/main-logo-bg.png" alt="Logo" height="50">
-                    Hollow Creek Farms
-                </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="collapse navbar-collapse" id="navbarLinks">
 
-                <div class="collapse navbar-collapse" id="navbarLinks">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link navBtn" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link navBtn" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link navBtn" href="farm.html">Seasonal Picks</a></li>
-                        <li class="nav-item"><a class="nav-link navBtn active" href="activities.html">Events</a></li>
-                        <li class="nav-item"><a class="nav-link navBtn" href="store.html">Farm Store</a></li>
-                        <li class="nav-item"><a class="nav-link navBtn" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item"><a class="nav-link navBtn" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="farm.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="activities.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="store.html">Farm Store</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="contact.html">Contact</a></li>
+
+                </ul>
 
             </div>
-        </nav>
+        </div>
+    </nav>
 
     </header>
 
@@ -80,26 +82,26 @@
         <section class="py-5">
             <div class="container">
                 <div class="container text-center">
-               <button type="button" onclick="clickCurrentSeasonBtn()" class="btn btn-primary">
-    Events Available Now
-</button>
+                    <button type="button" onclick="clickAllEvents()" class="btn btn-secondary me-3">
+                        All Events
+                    </button>
+                    <!-- AI ASSISTED: Season filter buttons - allows users to view events by season -->
+                    <button data-season="fall" type="button" onclick="clickFallBtn()" id="fallBtn" class="season-btn btn btn-primary mx-3">
+                        Fall Events
+                    </button>
 
-<button data-season="fall" type="button" onclick="clickFallBtn()" id="fallBtn" class="season-btn btn btn-primary mx-3">
-    Fall Events
-</button>
+                    <button data-season="winter" type="button" onclick="clickWinterBtn()" id="winterBtn" class="season-btn btn btn-primary mx-3">
+                        Winter Events
+                    </button>
 
-<button data-season="winter" type="button" onclick="clickWinterBtn()" id="winterBtn" class="season-btn btn btn-primary mx-3">
-    Winter Events
-</button>
+                    <button data-season="spring" type="button" onclick="clickSpringBtn()" class="season-btn btn btn-primary mx-3">
+                        Spring Events
+                    </button>
 
-<button data-season="spring" type="button" onclick="clickSpringBtn()" class="season-btn btn btn-primary mx-3">
-    Spring Events
-</button>
-
-<button data-season="summer" type="button" onclick="clickSummerBtn()" class="season-btn btn btn-primary mx-3">
-    Summer Events
-</button>
-</div>
+                    <button data-season="summer" type="button" onclick="clickSummerBtn()" class="season-btn btn btn-primary mx-3">
+                        Summer Events
+                    </button>
+                </div>
 
 
 
@@ -132,6 +134,38 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="genericModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" id="modalBody"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- AI ASSISTED: Generic modal for event booking and product details -->
+    <!-- Purpose: Display event information with availability-based button states -->
+    <div class="modal fade" id="genericModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" id="modalBody"></div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- =========================
      SCRIPTS

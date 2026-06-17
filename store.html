@@ -27,12 +27,11 @@
         🌾 Fresh Produce • Family Owned • Open Daily
     </div>
 
-    <nav id="mainNavbar" class="navbar navbar-expand-lg">
+   <nav id="mainNavbar" class="navbar navbar-expand-lg">
         <div class="container">
-
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img class="me-3" src="Logos/main-logo-bg.png" alt="Logo" height="50">
-                Hollow Creek Farms
+  
+            <a class="navbar-brand fw-bold" href="index.html"> <img class="me-4 ms-0 px-0 py-0" src="hclogo.png" alt="Logo" height="50"> Hollow Creek Farms
+                
             </a>
 
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
@@ -40,19 +39,21 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarLinks">
+
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item"><a class="nav-link navBtn" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link navBtn" href="farm.html">Seasonal Picks</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="farm.html">Explore</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="activities.html">Events</a></li>
-                    <li class="nav-item"><a class="nav-link navBtn active" href="store.html">Farm Store</a></li>
+                    <li class="nav-item"><a class="nav-link navBtn" href="store.html">Farm Store</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
 
+                </ul>
+
+            </div>
         </div>
     </nav>
-
 </header>
 
 <!-- =========================
@@ -87,8 +88,11 @@
 
     </div>
 </section>
-<div id="cart-icon">
+<div id="cart-icon" class="position-relative">
     🛒
+    <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        0
+    </span>
 </div>
 <div class="modal fade" id="cartModal">
     <div class="modal-dialog">
@@ -127,7 +131,9 @@
      FOOTER
 ========================= -->
 <footer id="mainFooter" class="text-white py-4">
+
     <div class="container">
+
         <div class="row">
 
             <div class="col-md-6">
@@ -142,7 +148,9 @@
             </div>
 
         </div>
+
     </div>
+
 </footer>
 
 <!-- =========================

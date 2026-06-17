@@ -162,6 +162,17 @@ html {
     object-fit: cover;
 }
 
+/* AI ASSISTED: Event card image hover dimming effect */
+/* Purpose: Dim event images by default, brighten on hover to improve focus and interactivity */
+.event-card-img {
+    filter: brightness(0.68);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}\n
+.card:hover .event-card-img {
+    filter: brightness(1);
+    transform: scale(1.03);
+}
+
 .card-title {
     color: #2f5d3f;
     font-weight: bold;
@@ -883,6 +894,23 @@ border:#e51414 solid 20px;
     cursor: pointer;
     z-index: 9999;
 }
+
+#cart-badge {
+    position: absolute !important;
+    top: -8px !important;
+    right: -8px !important;
+    z-index: 10000 !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+    background: #ff4444 !important;
+    display: none !important;
+    border: 2px solid white !important;
+}
+
+#cart-badge.d-inline-block {
+    display: inline-block !important;
+}
+
 .add-cart {
     position: absolute;
     top: 12px;
@@ -1079,7 +1107,7 @@ border:#e51414 solid 20px;
 
     font-weight: bold;
 
-    /* no explicit z-index here; stacking controlled by layout */
+    z-index: 999;
 
     /* hidden by default */
     opacity: 0;
@@ -1104,4 +1132,255 @@ border:#e51414 solid 20px;
     0% { transform: scale(0.6); }
     50% { transform: scale(1.4); }
     100% { transform: scale(1); }
+}
+#seasonIcon {
+    cursor: default;
+    transition: transform .3s ease;
+    user-select: none;
+}
+
+#seasonIcon:hover {
+    transform: rotate(10deg) scale(1.15);
+}
+.season-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    font-size: 1.5rem;
+  
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-item img.sam {
+    object-fit: cover;
+    object-position: 50% 65%;
+
+    transform: scale(1.15);
+
+    /* IMPORTANT: keeps scaling anchored properly */
+    transform-origin: center center;
+}
+.circle-item img.sam {
+    object-fit: cover;
+    object-position: 30% 60%;
+
+    transform: scale(1.25);
+    transform-origin: center;
+}
+/* ================================
+   ABOUT PAGE FARM GALLERY STYLE
+================================ */
+
+.generation-section,
+.farm-layer {
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================================
+   WOODEN SIGN TITLE (KEY FEATURE)
+================================ */
+
+.wood-sign {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(145deg, #8b5a2b, #6f4320);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    position: relative;
+    transform: rotate(-1deg);
+    margin-bottom: 40px;
+}
+
+.wood-sign h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+}
+
+/* little nail effect */
+.wood-sign::before,
+.wood-sign::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #c9b08a;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wood-sign::before {
+    left: 10px;
+}
+
+.wood-sign::after {
+    right: 10px;
+}
+
+/* ================================
+   CIRCLE ROW (CENTERS EVERYTHING)
+================================ */
+
+.circle-row,
+.staff-grid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+/* ================================
+   CIRCLE CARDS (FIXED + CONSISTENT)
+================================ */
+
+.circle-item {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease;
+}
+
+.circle-item:hover {
+    transform: scale(1.05);
+}
+
+/* image fix */
+.circle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ================================
+   OVERLAY (CLEAN + READABLE)
+================================ */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.circle-item:hover .overlay {
+    opacity: 1;
+}
+
+/* ================================
+   STAFF SECTION SEPARATION (NOT BOXED)
+================================ */
+
+.farm-layer {
+    margin-top: 40px;
+    border-top: 2px dashed rgba(47,93,63,0.25);
+}
+
+/* ================================
+   GENERATION SPACING (RESPONSIVE CLEANLINESS)
+================================ */
+
+.generation-section {
+    min-height: 40vh;
+}
+
+/* ================================
+   RESPONSIVE FIXES
+================================ */
+
+@media (max-width: 768px) {
+    .circle-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .wood-sign h2 {
+        font-size: 1.2rem;
+    }
+
+    .circle-row,
+    .staff-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-item {
+        width: 130px;
+        height: 130px;
+    }
+}
+/* =========================
+   HARD RESET: TRUE CIRCLE FIX
+========================= */
+
+.circle-item {
+    width: 180px !important;
+    height: 180px !important;
+    aspect-ratio: 1 / 1 !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    flex: 0 0 180px !important;
+
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* image must fully fill circle without distortion */
+.circle-item img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    display: block;
+}
+
+/* kill any stretching from overlays */
+.overlay {
+    border-radius: 50% !important;
+}
+/* =========================
+   FACE POSITION OVERRIDE (SAFE)
+========================= */
+
+.circle-item img.face-left {
+    object-fit: cover !important;
+    object-position: 5% center !important; /* shifts face left/right */
+    scale: 1.05 !important; /* slight zoom for better framing */
 }
