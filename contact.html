@@ -147,15 +147,19 @@
         <div class="formCard p-4">
             <h2 class="sectionTitle">Send a Message</h2>
 
-            <form>
-                <input class="form-control mb-3" placeholder="Name">
-                <input class="form-control mb-3" placeholder="Email">
-                <textarea class="form-control mb-3" rows="5" placeholder="Message"></textarea>
+           <form id="contactForm">
+    <input id="contactName" class="form-control mb-3" placeholder="Name" required>
+    <input id="contactEmail" class="form-control mb-3" placeholder="Email" type="email" required>
+    <textarea id="contactMessage" class="form-control mb-3" rows="5" placeholder="Message" required></textarea>
 
-                <button class="btn btn-success px-4">
-                    Send Message
-                </button>
-            </form>
+    <button class="btn btn-success px-4" type="submit">
+        Send Message
+    </button>
+</form>
+<p id="contactError" class="text-danger mt-2" style="display:none;"></p>
+<p id="eventError" class="text-danger mt-2" style="display:none;"></p>
+
+
         </div>
     </div>
 
@@ -172,18 +176,22 @@
                 Fill out the form and we’ll get back within 24 hours.
             </p>
 
-            <form>
-                <input class="form-control mb-3" id="eventName" placeholder="Event Name">
-                <input class="form-control mb-3" placeholder="Your Name">
-                <input class="form-control mb-3" placeholder="Email">
-                <input class="form-control mb-3" placeholder="Phone">
-                <input class="form-control mb-3" type="number" min="1" placeholder="Group Size">
-                <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+           <form id="eventForm">
+    <input id="eventTitle" class="form-control mb-3" placeholder="Event Name" required>
+    <input id="eventYourName" class="form-control mb-3" placeholder="Your Name" required>
+    <input id="eventEmail" class="form-control mb-3" placeholder="Email" type="email" required>
+    <input id="eventPhone" class="form-control mb-3" placeholder="Phone" required>
+    <input id="eventGroup" class="form-control mb-3" type="number" min="1" placeholder="Group Size" required>
+    <textarea id="eventMessage" class="form-control mb-3" rows="4" placeholder="Message" required></textarea>
 
-                <button class="btn btn-success px-4">
-                    Send Inquiry
-                </button>
-            </form>
+    <button class="btn btn-success px-4" type="submit">
+        Send Inquiry
+    </button>
+</form>
+<p id="contactError" class="text-danger mt-2" style="display:none;"></p>
+<p id="eventError" class="text-danger mt-2" style="display:none;"></p>
+
+
 
         </div>
     </div>

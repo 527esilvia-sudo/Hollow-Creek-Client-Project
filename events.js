@@ -25,7 +25,7 @@ function getSeasonIcon(season) {
         case "Summer":
             return '<i class="bi bi-sun-fill text-warning"></i>';
         case "Fall":
-            return '<i class="bi bi-leaf-fill text-warning"></i>';
+            return '🍁 ';
         case "Winter":
             return '<i class="bi bi-snow text-info"></i>';
         case "All Seasons":
@@ -40,14 +40,14 @@ CARD RENDERING
 ============================ */
 // AI ASSISTED: Main function to render event cards dynamically
 // Purpose: Display filtered event data with season icons, hover dimming, and booking metadata
-function renderEventCards(list, season) {
+function renderEventCards(list) {
     if (!events) return;
-
-    const seasonIcon = getSeasonIcon(season);
 
     events.innerHTML = "";
 
     list.forEach(item => {
+        const seasonIcon = getSeasonIcon(item.season);
+
         events.innerHTML += `
         <div class="col-12 col-md-6 d-flex justify-content-center">
             <div class="card h-100 position-relative overflow-hidden">
@@ -56,18 +56,18 @@ function renderEventCards(list, season) {
                     ${seasonIcon}
                 </div>
 
-                <img
-                    class="card-img-top modal-card event-card-img"
-                    src="${item.img}"
-                    alt="${item.item}"
-                    data-item="${item.item}"
-                    data-type="event"
-                    data-title="${item.item}"
-                    data-description="
-                        <p>${item.note}</p>
-                        <p>${item.description}</p>
-                    "
-                >
+           <img
+    class="card-img-top modal-card event-card-img"
+    src="${item.img}"
+    alt="${item.item}"
+    data-title="${item.item}"
+    data-item="${item.item}"
+    data-page="event"
+    data-description="
+        <p>${item.note}</p>
+        <p>${item.description}</p>
+    "
+>
 
                 <div class="card-body">
                     <h4 class="card-title">${item.item}</h4>
@@ -128,8 +128,14 @@ function clickWinterBtn() {
 // AI ASSISTED: Display all events from all seasons
 // Purpose: Allow users to see complete event catalog across the entire year
 function clickAllEvents() {
-    const allEvents = [...springEvents, ...summerEvents, ...fallEvents, ...winterEvents];
-    renderEventCards(allEvents, "All Seasons");
+    const allEvents = [
+        ...springEvents.map(e => ({ ...e, season: "Spring" })),
+        ...summerEvents.map(e => ({ ...e, season: "Summer" })),
+        ...fallEvents.map(e => ({ ...e, season: "Fall" })),
+        ...winterEvents.map(e => ({ ...e, season: "Winter" }))
+    ];
+
+    renderEventCards(allEvents);
 }
 
 /* ============================

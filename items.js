@@ -177,15 +177,8 @@ const storeItems = [
     note: 'Small-batch',
     description: 'Pure maple syrup bottled locally in glass jars.',
     img: 'maple-syrup.png'
-},
-{
-    item: 'Hollow Creek Hoodie',
-    category: 'Merch',
-    price: '30.00',
-    note: 'Show off HC pride',
-    description: 'Comfy cozy hoodie perfect for the fall season.',
-    img: 'sweatshirt.png'
 }
+
 
 
 ]
@@ -206,56 +199,65 @@ const springEvents = [
     category: 'Spring',
     note: 'Mid-May through June',
     description: 'Walk through the farm’s first sunflower bloom of the year.',
-    img: 'Events/sunflower-event.png'
+    img: 'Events/sunflower-event.png',
+    season: 'Spring'
 },
 {
     item: 'U-Pick Strawberries & Asparagus',
     category: 'Spring',
     note: 'Weekends Only',
     description: 'Pick fresh strawberries and asparagus directly from the fields.',
-    img: 'Events/strawberry-event.png'
+    img: 'Events/strawberry-event.png',
+    season: 'Spring'
 },
 {
     item: 'Baby Animal Barn',
     category: 'Spring',
     note: 'Family Favorite',
     description: 'Meet chicks, ducklings, and baby goats in the barn.',
-    img: 'Events/animals-event.png'
+    img: 'Events/animals-event.png',
+    season: 'Spring'
 },
 {
     item: 'Garden Seedlings & Produce',
     category: 'Spring',
     note: 'Freshly Grown',
     description: 'Shop spring produce, seedlings, and transplants for your home garden.',
-    img: 'Events/seedlings-event.png'
+    img: 'Events/seedlings-event.png',
+    season: 'Spring'
 },
 {
     item: 'Farm Animal Petting Day',
     category: 'Spring',
     note: 'Saturdays',
     description: 'Interact with friendly farm animals up close.',
-    img: 'Events/animals-event.png'
+    img: 'Events/animals-event.png',
+    season: 'Spring'
 },
 {
     item: 'Spring Flower Festival',
     category: 'Spring',
     note: 'April Weekend Event',
     description: 'Celebrate blooming flowers with music and food vendors.',
-    img: 'Events/festival-event.png'
+    img: 'Events/festival-event.png',
+    season: 'Spring'
 },
 {
     item: 'Butterfly Garden Walk',
     category: 'Spring',
     note: 'Seasonal Exhibit',
     description: 'Walk through a blooming garden filled with butterflies.',
-    img: 'Events/butterfly-event.png'
+    img: 'Events/butterfly-event.png',
+    season: 'Spring'
+
 },
 {
     item: 'Farm Workshops',
     category: 'Spring',
     note: 'Weekly Classes',
     description: 'Learn gardening and sustainable farming skills.',
-    img: 'Events/workshop-event.png'
+    img: 'Events/workshop-event.png',
+    season: 'Spring'
 }
 ];
 const summerEvents = [
@@ -266,7 +268,8 @@ const summerEvents = [
     description: 'Visit the berry fields and pick fresh blueberries.',
     img: 'Events/blueberry-event.png',
     startMonth: 7, startDay: 1,
-    endMonth: 8, endDay: 15
+    endMonth: 8, endDay: 15,
+    season: 'Summer'
 },
 {
     item: 'Farm-to-Table Dinner',
@@ -275,7 +278,8 @@ const summerEvents = [
     description: 'Enjoy a ticketed dinner featuring fresh ingredients from the farm.',
     img: 'Events/table-event.png',
     startMonth: 6, startDay: 21,
-    endMonth: 8, endDay: 31
+    endMonth: 8, endDay: 31,
+    season: 'Summer'
 },
 {
     item: 'Sunflower U-Pick',
@@ -284,7 +288,8 @@ const summerEvents = [
     description: 'Walk the rows and cut your own sunflower bouquet.',
     img: 'Events/sunflower-event.png',
     startMonth: 7, startDay: 15,
-    endMonth: 8, endDay: 15
+    endMonth: 8, endDay: 15,
+    season: 'Summer'
 },
 {
     item: 'Sweet Corn Harvest',
@@ -293,7 +298,8 @@ const summerEvents = [
     description: 'Pick up freshly harvested sweet corn from the farm market.',
     img: 'Events/corn-event.png',
     startMonth: 7, startDay: 1,
-    endMonth: 9, endDay: 15
+    endMonth: 9, endDay: 15,
+    season: 'Summer'
 },
 {
     item: 'Summer Picnic Days',
@@ -302,7 +308,8 @@ const summerEvents = [
     description: 'Relax outdoors with picnic areas and farm views.',
     img: 'Events/picnic-event.png',
     startMonth: 6, startDay: 21,
-    endMonth: 9, endDay: 22
+    endMonth: 9, endDay: 22,
+    season: 'Summer'
 },
 {
     item: 'Farm Camp Activities',
@@ -311,7 +318,8 @@ const summerEvents = [
     description: 'Hands-on activities, games, and educational farm experiences.',
     img: 'Events/camp-event.png',
     startMonth: 7, startDay: 1,
-    endMonth: 8, endDay: 31
+    endMonth: 8, endDay: 31,
+    season: 'Summer'
 },
 {
     item: 'Garden Tours',
@@ -320,7 +328,8 @@ const summerEvents = [
     description: 'Explore seasonal flowers, vegetables, and growing techniques.',
     img: 'Events/garden-event.png',
     startMonth: 6, startDay: 21,
-    endMonth: 9, endDay: 22
+    endMonth: 9, endDay: 22,
+    season: 'Summer'
 },
 {
     item: 'Goat Yoga',
@@ -329,7 +338,8 @@ const summerEvents = [
     description: 'Enjoy local ice cream and live entertainment on the farm.',
     img: 'Events/yoga-event.png',
     startMonth: 7, startDay: 15,
-    endMonth: 8, endDay: 31
+    endMonth: 8, endDay: 31,
+    season: 'Summer'
 }
 ];
 
@@ -341,7 +351,8 @@ const fallEvents = [
     description: 'Navigate a 5-acre maze with a new design each year.',
     img: 'Events/maze-event.png',
     startMonth: 9, startDay: 1,
-    endMonth: 11, endDay: 15
+    endMonth: 11, endDay: 15,
+    season: 'Fall'
 },
 {
     item: 'Pumpkin Patch',
@@ -350,7 +361,8 @@ const fallEvents = [
     description: 'Choose from more than 20 varieties of pumpkins.',
     img: 'Events/pumpkin-event.png',
     startMonth: 9, startDay: 15,
-    endMonth: 11, endDay: 30
+    endMonth: 11, endDay: 30,
+    season: 'Fall'
 },
 {
     item: 'Hayrides',
@@ -359,7 +371,8 @@ const fallEvents = [
     description: 'Enjoy tractor-pulled wagon rides around the farm.',
     img: 'Events/hayride-event.png',
     startMonth: 9, startDay: 23,
-    endMonth: 10, endDay: 31
+    endMonth: 10, endDay: 31,
+    season: 'Fall'
 },
 {
     item: 'Apple Cider Pressing',
@@ -368,7 +381,8 @@ const fallEvents = [
     description: 'Watch fresh cider being made and take a jug home.',
     img: 'Events/cider-event.png',
     startMonth: 9, startDay: 1,
-    endMonth: 11, endDay: 30
+    endMonth: 11, endDay: 30,
+    season: 'Fall'
 },
 {
     item: 'Fall Harvest Festival',
@@ -377,7 +391,8 @@ const fallEvents = [
     description: 'Enjoy food vendors, live music, crafts, and farm fun.',
     img: 'Events/festival-event.png',
     startMonth: 10, startDay: 15,
-    endMonth: 10, endDay: 31
+    endMonth: 10, endDay: 31,
+    season: 'Fall'
 },
 {
     item: 'Pumpkin Decorating',
@@ -386,7 +401,8 @@ const fallEvents = [
     description: 'Decorate pumpkins with paints, markers, and seasonal designs.',
     img: 'Events/decorating-event.png',
     startMonth: 9, startDay: 15,
-    endMonth: 11, endDay: 30
+    endMonth: 11, endDay: 30,
+    season: 'Fall'
 },
 {
     item: 'Scarecrow Workshop',
@@ -395,7 +411,8 @@ const fallEvents = [
     description: 'Build and customize your own scarecrow to take home.',
     img: 'Events/scarecrow-event.png',
     startMonth: 9, startDay: 23,
-    endMonth: 10, endDay: 31
+    endMonth: 10, endDay: 31,
+    season: 'Fall'
 },
 {
     item: 'Autumn Photo Days',
@@ -416,7 +433,8 @@ const winterEvents = [
     description: 'Shop artisan goods, wreaths, gifts, and seasonal treats.',
     img: 'Events/winter-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 12, endDay: 21
+    endMonth: 12, endDay: 21,
+    season: 'Winter'
 },
 {
     item: 'Wreath Making Workshop',
@@ -425,7 +443,8 @@ const winterEvents = [
     description: 'Create a festive wreath using fresh greenery.',
     img: 'Events/wreath-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 12, endDay: 24
+    endMonth: 12, endDay: 24,
+    season: 'Winter'
 },
 {
     item: 'Holiday Lights Display',
@@ -434,7 +453,8 @@ const winterEvents = [
     description: 'Walk through the farm decorated with seasonal lights.',
     img: 'Events/lights-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 1, endDay: 15
+    endMonth: 1, endDay: 15,
+    season: 'Winter'
 },
 {
     item: 'Hot Cocoa Nights',
@@ -443,7 +463,8 @@ const winterEvents = [
     description: 'Warm up with hot cocoa and holiday treats.',
     img: 'Events/cocoa-event.png',
     startMonth: 12, startDay: 15,
-    endMonth: 1, endDay: 15
+    endMonth: 1, endDay: 15,
+    season: 'Winter'
 },
 {
     item: 'Christmas Tree Sales',
@@ -452,7 +473,8 @@ const winterEvents = [
     description: 'Choose a fresh-cut tree for your holiday celebrations.',
     img: 'Events/christmas-event.png',
     startMonth: 11, startDay: 15,
-    endMonth: 12, endDay: 25
+    endMonth: 12, endDay: 25,
+    season: 'Winter'
 },
 {
     item: 'Winter Farm Market',
@@ -461,7 +483,8 @@ const winterEvents = [
     description: 'Shop winter vegetables, baked goods, and preserves.',
     img: 'Events/winter-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 2, endDay: 28
+    endMonth: 2, endDay: 28,
+    season: 'Winter'
 },
 {
     item: 'Holiday Craft Fair',
@@ -470,7 +493,8 @@ const winterEvents = [
     description: 'Browse handmade crafts and unique gift items.',
     img: 'Events/craft-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 12, endDay: 24
+    endMonth: 12, endDay: 24,
+    season: 'Winter'
 },
 {
     item: 'Santa Visits the Farm',
@@ -479,6 +503,7 @@ const winterEvents = [
     description: 'Meet Santa and take photos with family and friends.',
     img: 'Events/santa-event.png',
     startMonth: 12, startDay: 1,
-    endMonth: 12, endDay: 24
+    endMonth: 12, endDay: 24,
+    season: 'Winter'
 }
 ];

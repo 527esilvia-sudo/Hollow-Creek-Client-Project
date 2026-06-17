@@ -348,20 +348,18 @@ hotspots.forEach(h => {
 
 /* Click hotspot → modal */
 hotspots.forEach(h => {
-
     h.addEventListener("click", () => {
 
-        const title =
-            h.dataset.title ||
-            "Farm Area";
-
-        const info =
-            h.dataset.info ||
-            "More information coming soon.";
+        const title = h.dataset.title || "Farm Area";
+        const info = h.dataset.info || "";
+        const img = h.dataset.img || "";
 
         openModal(
             title,
-            `<p>${info}</p>`,
+            `
+            ${img ? `<img src="${img}" class="img-fluid rounded mb-3">` : ""}
+            <p>${info}</p>
+            `,
             "about",
             title
         );
