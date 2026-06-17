@@ -1,9 +1,19 @@
 /* ============================
-   GLOBAL STATE
+   GLOBAL ELEMENTS
 ============================ */
-const card = document.getElementById("row-items");
+const cardContainer = document.getElementById("row-items");
 const seasonalTrack = document.getElementById("seasonalTrack");
 const cart = {};
+
+/* ============================
+   UTIL
+============================ */
+function makeId(name) {
+    return (name || "")
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9-]/g, "");
+}
 
 /* ============================
    SPLASH SCREEN
@@ -12,81 +22,129 @@ window.addEventListener("load", () => {
     const splash = document.getElementById("splashScreen");
 
     if (splash) {
-        setTimeout(() => splash.classList.add("fade-out"), 2000);
+        setTimeout(() => {
+            splash.classList.add("fade-out");
+        }, 2000);
     }
 
     updateCartIconBadge();
+
+    /* Event booking autofill */
+    const bookedEvent = sessionStorage.getItem("bookedEvent");
+
+    if (bookedEvent) {
+        const input = document.getElementById("eventName");
+
+        if (input) {
+            input.value = bookedEvent;
+        }
+
+        sessionStorage.removeItem("bookedEvent");
+    }
 });
 
 /* ============================
-   UTIL
+   STORE PAGE CARDS
 ============================ */
-function makeId(name) {
-    return (name || "").toLowerCase().replace(/\s+/g, "-");
-}
+if (cardContainer && typeof storeItems !== "undefined") {
 
-/* ============================
-   STORE ITEM CARDS
-============================ */
-if (card && typeof storeItems !== "undefined") {
     storeItems.forEach(item => {
-        card.innerHTML += `
-<div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-    <div class="card h-100 position-relative overflow-hidden">
 
-        <i class="bi bi-cart-plus add-cart"
-           data-item="${item.item}"></i>
+        cardContainer.innerHTML += `
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
 
-        <div class="cart-badge" id="badge-${makeId(item.item)}">0</div>
+            <div class="card h-100 position-relative overflow-hidden">
 
-        <img class="card-img-top modal-card"
-            src="${item.img}"
-            alt="${item.item}"
-            data-item="${item.item}"
-            data-title="${item.item}"
-            data-description="
-                <p><strong>Price:</strong> ${item.price}</p>
-                <p>${item.note}</p>
-                <p>${item.description}</p>
-            ">
+                <i class="bi bi-cart-plus add-cart"
+                   data-item="${item.item}"></i>
 
-        <div class="card-overlay">
-            <h4>${item.item}</h4>
-        </div>
+                <div class="cart-badge"
+                     id="badge-${makeId(item.item)}">0</div>
 
-    </div>
-</div>`;
+                <img
+                    class="card-img-top modal-card"
+                    src="${item.img}"
+                    alt="${item.item}"
+                    data-title="${item.item}"
+                    data-item="${item.item}"
+                    data-page="store"
+                    data-description="
+                        <p><strong>Price:</strong> ${item.price}</p>
+                        <p>${item.note}</p>
+                        <p>${item.description}</p>
+                    "
+                >
+
+                <div class="card-overlay">
+                    <h4>${item.item}</h4>
+                </div>
+
+            </div>
+
+        </div>`;
     });
 }
 
 /* ============================
-   CART FUNCTIONS
+   SEASONAL FAVORITES
 ============================ */
-function addToCart(itemName) {
-    cart[itemName] = (cart[itemName] || 0) + 1;
-    updateBadge(itemName);
+if (seasonalTrack && typeof storeItems !== "undefined") {
+
+    const featuredItems = storeItems.slice(0, 8);
+
+    const doubled = [...featuredItems, ...featuredItems];
+
+    doubled.forEach(item => {
+
+        seasonalTrack.innerHTML += `
+        <div class="seasonal-card">
+
+            <div class="card">
+
+                <img
+                    src="${item.img}"
+                    alt="${item.item}"
+                    class="modal-card"
+                    data-title="${item.item}"
+                    data-item="${item.item}"
+                    data-page="store"
+                    data-description="
+                        <p><strong>Price:</strong> ${item.price}</p>
+                        <p>${item.note}</p>
+                        <p>${item.description}</p>
+                    "
+                >
+
+                <div class="card-overlay">
+                    <h5>${item.item}</h5>
+                </div>
+
+            </div>
+
+        </div>`;
+    });
+}
+
+/* ============================
+   CART SYSTEM
+============================ */
+function addToCart(name) {
+
+    cart[name] = (cart[name] || 0) + 1;
+
+    updateBadge(name);
     updateCartIconBadge();
 }
 
-function updateCartIconBadge() {
-    const cartBadge = document.getElementById("cart-badge");
-    if (!cartBadge) return;
+function updateBadge(name) {
 
-    let total = 0;
-    for (const item in cart) total += cart[item];
+    const badge =
+        document.getElementById(`badge-${makeId(name)}`);
 
-    cartBadge.textContent = total;
-    cartBadge.classList.toggle("d-none", total === 0);
-    cartBadge.classList.toggle("d-inline-block", total > 0);
-}
-
-function updateBadge(itemName) {
-    const badge = document.getElementById(`badge-${makeId(itemName)}`);
     if (!badge) return;
 
-    const count = cart[itemName];
+    badge.textContent = cart[name];
 
-    badge.textContent = count;
     badge.classList.add("show");
 
     badge.classList.remove("pop");
@@ -94,106 +152,114 @@ function updateBadge(itemName) {
     badge.classList.add("pop");
 }
 
-/* ============================
-   MODAL HANDLER
-============================ */
-function openModal(title, body, itemName, itemType, item) {
-    document.getElementById("modalTitle").innerHTML = title || "Details";
+function updateCartIconBadge() {
 
-    const isEvent = itemType === "event";
+    const badge = document.getElementById("cart-badge");
 
-    const available =
-        item && item.startMonth ? isEventAvailable(item) : true;
+    if (!badge) return;
 
-    const actionLabel = isEvent ? "Book Event" : "Add to Cart";
+    let total = 0;
 
-    let buttonHTML = "";
-
-    if (isEvent) {
-        buttonHTML = available
-            ? `<button class="btn btn-success mt-3"
-                    onclick="bookEvent('${itemName}')">
-                    ${actionLabel}
-               </button>`
-            : `<button class="btn btn-secondary mt-3" disabled>
-                    Coming Soon
-               </button>`;
-    } else {
-        buttonHTML = `
-            <button class="btn btn-success mt-3"
-                onclick="addToCart('${itemName}')">
-                ${actionLabel}
-            </button>`;
+    for (let item in cart) {
+        total += cart[item];
     }
 
-   document.getElementById("modalBody").innerHTML = `
-    ${body || ""}
-    ${buttonHTML}
-`;
+    badge.textContent = total;
 
-    new bootstrap.Modal(document.getElementById("genericModal")).show();
+    badge.classList.toggle(
+        "d-none",
+        total === 0
+    );
+
+    badge.classList.toggle(
+        "d-inline-block",
+        total > 0
+    );
 }
 
 /* ============================
-   AI FIX: MODAL DATA SAFETY LAYER
-   Purpose: Prevent undefined modal content when cards lack dataset fields
+   MODAL
+============================ */
+function openModal(title, body, pageType = "store", name = "") {
+
+    const modalTitle =
+        document.getElementById("modalTitle");
+
+    const modalBody =
+        document.getElementById("modalBody");
+
+    if (!modalTitle || !modalBody) return;
+
+    modalTitle.innerHTML = title;
+
+    let buttonHTML = "";
+
+    if (pageType === "about") {
+
+        buttonHTML = `
+            <button
+                class="btn btn-danger mt-3"
+                data-bs-dismiss="modal">
+                Close
+            </button>`;
+    }
+
+    else if (pageType === "event") {
+
+        buttonHTML = `
+            <button
+                class="btn btn-success mt-3"
+                onclick="bookEvent('${name}')">
+                Book Event
+            </button>`;
+    }
+
+    else {
+
+        buttonHTML = `
+            <button
+                class="btn btn-success mt-3"
+                onclick="addToCart('${name}')">
+                Add to Cart
+            </button>`;
+    }
+
+    modalBody.innerHTML = `
+        ${body}
+        ${buttonHTML}
+    `;
+
+    new bootstrap.Modal(
+        document.getElementById("genericModal")
+    ).show();
+}
+
+/* ============================
+   CARD CLICK HANDLER
 ============================ */
 document.addEventListener("click", (e) => {
-    const product = e.target.closest(".modal-card");
 
-    if (!product) return;
+    const card =
+        e.target.closest(".modal-card");
 
-    const itemName =
-        product.dataset.item ||
-        product.dataset.title ||
-        product.querySelector("h3, h4, .card-title")?.innerText ||
-        "Item";
+    if (!card) return;
 
-    const itemType = product.dataset.type || "product";
-
-    let itemObj = null;
-
-    /* AI PURPOSE:
-       Some cards (seasonal/staff/family) are not in event arrays.
-       This prevents null lookup crashes and keeps modal stable.
-    */
-    if (itemType === "event" && typeof springEvents !== "undefined") {
-        const allEvents = [
-            ...springEvents,
-            ...summerEvents,
-            ...fallEvents,
-            ...winterEvents
-        ];
-
-        itemObj = allEvents.find(e =>
-            (e.item || "").trim() === (itemName || "").trim()
-        );
-    }
-const title =
-    product.dataset.title ||
-    product.querySelector("h3, h4, .card-title")?.innerText ||
-    itemName ||
-    "Item";
-
-const description =
-    product.dataset.description ||
-    product.querySelector("p")?.innerHTML ||
-    "";
-
-openModal(
-    title,
-    description,
-    itemName,
-    itemType,
-    itemObj
-);
+    openModal(
+        card.dataset.title || "Item",
+        card.dataset.description || "",
+        card.dataset.page || "store",
+        card.dataset.item || card.dataset.title
+    );
 });
 
 /* ============================
-   CART CLICK
+   QUICK ADD CART ICON
 ============================ */
 document.addEventListener("click", (e) => {
-    const cartBtn = e.target.closest(".add-cart");
+
+    const cartBtn =
+        e.target.closest(".add-cart");
+
     if (!cartBtn) return;
 
     addToCart(cartBtn.dataset.item);
@@ -202,104 +268,102 @@ document.addEventListener("click", (e) => {
 /* ============================
    CART MODAL
 ============================ */
-const cartIcon = document.getElementById("cart-icon");
+const cartIcon =
+    document.getElementById("cart-icon");
 
 if (cartIcon) {
+
     cartIcon.addEventListener("click", () => {
+
         let output = "";
 
-        for (const item in cart) {
-            output += `<p><strong>${item}</strong> × ${cart[item]}</p>`;
+        for (let item in cart) {
+
+            output += `
+            <p>
+                <strong>${item}</strong>
+                × ${cart[item]}
+            </p>`;
         }
 
-        document.getElementById("cartContents").innerHTML =
-            output || "<p>Your cart is empty.</p>";
+        const contents =
+            document.getElementById("cartContents");
 
-        new bootstrap.Modal(document.getElementById("cartModal")).show();
+        if (contents) {
+            contents.innerHTML =
+                output || "<p>Your cart is empty.</p>";
+        }
+
+        new bootstrap.Modal(
+            document.getElementById("cartModal")
+        ).show();
     });
 }
 
 /* ============================
-   EVENT AVAILABILITY
+   BOOK EVENT
 ============================ */
-function isEventAvailable(item) {
-    if (!item) return true;
-    if (!item.startMonth || !item.endMonth) return true;
+function bookEvent(name) {
 
-    const today = new Date();
-    const m = today.getMonth() + 1;
-    const d = today.getDate();
-
-    if (item.startMonth > item.endMonth) {
-        return (
-            (m === item.startMonth && d >= item.startDay) ||
-            m > item.startMonth ||
-            (m === item.endMonth && d <= item.endDay) ||
-            m < item.endMonth
-        );
-    }
-
-    return (
-        !(m < item.startMonth ||
-        m > item.endMonth ||
-        (m === item.startMonth && d < item.startDay) ||
-        (m === item.endMonth && d > item.endDay))
+    sessionStorage.setItem(
+        "bookedEvent",
+        name
     );
+
+    window.location.href =
+        "contact.html#event-booking";
 }
 
 /* ============================
-   SEASONAL PREVIEW (UNCHANGED LOGIC)
+   FARM MAP HOTSPOTS
 ============================ */
-function createCard(item) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "seasonal-card";
+const hotspots =
+    document.querySelectorAll(".hotspot");
 
-    wrapper.innerHTML = `
-        <div class="card h-100 shadow-sm modal-card">
-            <img src="${item.img}" alt="${item.item}" class="card-img-top">
-            <div class="card-body text-center">
-                <h5 class="card-title mb-0">${item.item}</h5>
-            </div>
-        </div>
-    `;
-    return wrapper;
-}
+/* Tooltip */
+hotspots.forEach(h => {
 
-function loadSeasonalPreview(items) {
-    const seasonalItems = items.slice(0, 8);
-    seasonalTrack.innerHTML = "";
+    h.addEventListener("mouseenter", () => {
 
-    seasonalItems.forEach(i => seasonalTrack.appendChild(createCard(i)));
-    seasonalItems.forEach(i => seasonalTrack.appendChild(createCard(i)));
-}
+        if (h.querySelector(".tooltip")) return;
 
-if (seasonalTrack && typeof storeItems !== "undefined") {
-    loadSeasonalPreview(storeItems);
-}
+        const tip =
+            document.createElement("div");
 
-/* ============================
-   SEASON ICON
-============================ */
-function setSeasonIcon() {
-    const icon = document.getElementById("seasonIcon");
-    if (!icon) return;
+        tip.className = "tooltip";
+        tip.textContent =
+            h.dataset.info || "";
 
-    const m = new Date().getMonth() + 1;
-
-    if (m === 12 || m <= 2) icon.textContent = "❄️";
-    else if (m <= 5) icon.textContent = "🌸";
-    else if (m <= 8) icon.textContent = "☀️";
-    else icon.textContent = "🍂";
-}
-
-setSeasonIcon();
-
-const genericModalEl = document.getElementById("genericModal");
-
-if (genericModalEl) {
-    genericModalEl.addEventListener("hide.bs.modal", () => {
-        if (document.activeElement) {
-            document.activeElement.blur();
-        }
+        h.appendChild(tip);
     });
-}
+
+    h.addEventListener("mouseleave", () => {
+
+        const tip =
+            h.querySelector(".tooltip");
+
+        if (tip) tip.remove();
+    });
+});
+
+/* Click hotspot → modal */
+hotspots.forEach(h => {
+
+    h.addEventListener("click", () => {
+
+        const title =
+            h.dataset.title ||
+            "Farm Area";
+
+        const info =
+            h.dataset.info ||
+            "More information coming soon.";
+
+        openModal(
+            title,
+            `<p>${info}</p>`,
+            "about",
+            title
+        );
+    });
+});

@@ -137,15 +137,7 @@ HIDE CURRENT SEASON BUTTON
 ============================ */
 // AI ASSISTED: Hide the button for the current season since it's already the default
 // Purpose: Reduce redundancy and improve UX by not showing the default filter button
-function removeButton() {
-    const currentSeason = seasons().toLowerCase();
 
-    document.querySelectorAll(".season-btn").forEach(btn => {
-        if (btn.dataset.season.toLowerCase() === currentSeason) {
-            btn.style.display = "none";
-        }
-    });
-}
 
 /* ============================
 INITIALIZATION
@@ -153,6 +145,36 @@ INITIALIZATION
 // AI ASSISTED: Initialize events page on load
 // Purpose: Display current season events by default and hide redundant filter button
 window.addEventListener("load", () => {
-    removeButton();
+
     checkSeason();
 });
+/* ============================
+   SEASON ICON
+============================ */
+function setSeasonIcon() {
+    const icon = document.getElementById("seasonIcon");
+    if (!icon) return;
+
+    const m = new Date().getMonth() + 1;
+
+    if (m <= 2) icon.textContent = "❄️";
+    else if (m <= 5) icon.textContent = "🌸";
+    else if (m <= 8) icon.textContent = "☀️";
+    else icon.textContent = "🍂";
+}
+
+setSeasonIcon();
+
+
+function toggleSeasonButtons() {
+    const filters = document.getElementById("seasonFilters");
+    const btn = document.getElementById("seasonToggleBtn");
+
+    filters.classList.toggle("show");
+
+    if (filters.classList.contains("show")) {
+        btn.textContent = "Hide Seasons";
+    } else {
+        btn.textContent = "Seasonal Events";
+    }
+}

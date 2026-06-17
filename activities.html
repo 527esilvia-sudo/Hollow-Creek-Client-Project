@@ -63,7 +63,7 @@
     <section class="pageHero d-flex align-items-center text-center text-white">
         <div class="container">
             <h1 class="display-5 fw-bold">Seasonal Events & Activities</h1>
-            <p class="mt-3 mx-auto" style="max-width: 750px;">
+            <p class="mt-3 mx-auto">
                 From sunflower festivals to cozy fall hayrides, there’s always something happening at Hollow Creek
                 Farms.
                 Explore our upcoming events below!
@@ -81,27 +81,42 @@
     <main>
         <section class="py-5">
             <div class="container">
-                <div class="container text-center">
-                    <button type="button" onclick="clickAllEvents()" class="btn btn-secondary me-3">
-                        All Events
-                    </button>
-                    <!-- AI ASSISTED: Season filter buttons - allows users to view events by season -->
-                    <button data-season="fall" type="button" onclick="clickFallBtn()" id="fallBtn" class="season-btn btn btn-primary mx-3">
-                        Fall Events
-                    </button>
+              <div class="container text-center">
 
-                    <button data-season="winter" type="button" onclick="clickWinterBtn()" id="winterBtn" class="season-btn btn btn-primary mx-3">
-                        Winter Events
-                    </button>
+    <button type="button" onclick="clickAllEvents()" class="btn btn-secondary me-3">
+        All Events
+    </button>
 
-                    <button data-season="spring" type="button" onclick="clickSpringBtn()" class="season-btn btn btn-primary mx-3">
-                        Spring Events
-                    </button>
+    <!-- TOGGLE BUTTON -->
+    <button
+        id="seasonToggleBtn"
+        class="btn btn-secondary btn-success mx-3"
+        onclick="toggleSeasonButtons()">
+        Seasonal Events
+    </button>
 
-                    <button data-season="summer" type="button" onclick="clickSummerBtn()" class="season-btn btn btn-primary mx-3">
-                        Summer Events
-                    </button>
-                </div>
+    <!-- WRAPPER (THIS IS WHAT YOU WERE MISSING) -->
+    <div id="seasonFilters">
+
+        <button data-season="fall" type="button" onclick="clickFallBtn()" id="fallBtn" class="season-btn btn mx-2">
+            Fall Events
+        </button>
+
+        <button data-season="winter" type="button" onclick="clickWinterBtn()" id="winterBtn" class="season-btn btn mx-2">
+            Winter Events
+        </button>
+
+        <button data-season="spring" type="button" onclick="clickSpringBtn()" class="season-btn btn mx-2">
+            Spring Events
+        </button>
+
+        <button data-season="summer" type="button" onclick="clickSummerBtn()" class="season-btn btn mx-2">
+            Summer Events
+        </button>
+
+    </div>
+
+</div>
 
 
 

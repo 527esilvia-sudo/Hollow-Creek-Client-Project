@@ -250,12 +250,7 @@ h1, h2, h3, .sectionTitle {
 
 .pageHero {
     min-height: 45vh;
-    background: linear-gradient(
-        rgba(44, 95, 46, 0.75),
-        rgba(139, 37, 0, 0.55)
-    ),
-    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop");
-
+  
     background-size: cover;
     background-position: center;
 
@@ -1383,4 +1378,398 @@ border:#e51414 solid 20px;
     object-fit: cover !important;
     object-position: 5% center !important; /* shifts face left/right */
     scale: 1.05 !important; /* slight zoom for better framing */
+}
+/* ================================
+   HOLLOW CREEK FARM MODAL STYLE
+   (centered, smaller, themed)
+================================ */
+
+/* shrink + center modal */
+.modal-dialog {
+    max-width: 520px; /* smaller, cleaner */
+    margin: auto;
+}
+
+/* modal container */
+.modal-content {
+    border-radius: 18px;
+    border: 2px solid rgba(47, 93, 63, 0.25);
+
+    background: #efe4cf; /* parchment farm tone */
+    color: #2a2a2a;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    font-family: "Playfair Display", serif;
+}
+
+/* header styling */
+.modal-header {
+    background: #2f5d3f; /* forest green */
+    color: white;
+
+    border-bottom: none;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+/* title */
+.modal-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* body */
+.modal-body {
+    padding: 20px;
+    font-family: "Lato", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* close button fix for contrast */
+.btn-close {
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+/* buttons inside modal */
+.modal .btn-success {
+    background: #2f5d3f;
+    border: none;
+}
+
+.modal .btn-success:hover {
+    background: #4f7d5f;
+}
+
+/* fade-in feel (soft entrance) */
+.modal.fade .modal-dialog {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+/* ================================
+   MODAL BUTTON - BARN RED THEME
+================================ */
+
+.modal .btn-success {
+    background: #8B2500;   /* barn red */
+    border: none;
+    color: white;
+}
+
+.modal .btn-success:hover {
+    background: #a8320a;
+    color: white;
+}
+.card {
+    position: relative;
+}
+
+/* cart icon */
+.add-cart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    font-size: 1.2rem;
+
+    z-index: 10; /* lower than badge */
+}
+
+/* number badge (THIS is what fixes your issue) */
+.cart-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #800020;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    z-index: 999; /* MUST be higher than icon */
+    pointer-events: none; /* prevents blocking clicks */
+}
+#event-booking {
+    position: relative;
+    z-index: 2;
+}
+
+#event-booking input,
+#event-booking textarea {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    user-select: text;
+}
+.formCard {
+    position: relative;
+    z-index: 1;
+}
+/* CARD BASE */
+.card {
+    position: relative;
+}
+
+/* CART ICON (always behind badge) */
+.add-cart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    font-size: 1.2rem;
+
+    z-index: 5; /* LOWER than badge */
+}
+
+/* CART NUMBER BADGE (always on top) */
+.cart-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #800020;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    z-index: 20; /* HIGHER than icon */
+
+    pointer-events: none;
+}
+.pageHero {
+    min-height: 45vh;
+    background:
+    linear-gradient(
+        rgba(47,93,63,.75),
+        rgba(123,45,38,.55)
+    ),
+    url("farm-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main page background */
+main {
+    background: #f7f1e3;
+}
+
+/* Contact cards */
+.infoCard,
+.formCard {
+    background: #efe4cf;
+    border: 2px solid rgba(47,93,63,.15);
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* Section titles */
+.sectionTitle {
+    color: #2f5d3f;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Information headings */
+.infoCard h5 {
+    color: #8b2500;
+    font-weight: 700;
+}
+
+/* Labels */
+.form-label {
+    color: #6b4f3b;
+    font-weight: 600;
+}
+
+/* Inputs */
+.form-control {
+    background: #fffdf8;
+    border: 1px solid #d8cdb8;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: #2f5d3f;
+    box-shadow: 0 0 0 .2rem rgba(47,93,63,.15);
+}
+
+/* Event booking section */
+#event-booking {
+    margin-top: 50px;
+}
+
+#event-booking .formCard {
+    background: #f4ead7;
+    border-left: 6px solid #8b2500;
+}
+
+/* Social icons */
+.socials i {
+    color: #2f5d3f;
+    margin-right: 8px;
+}
+
+/* Buttons */
+.btn-success {
+    background: #8b2500;
+    border-color: #8b2500;
+}
+
+.btn-success:hover {
+    background: #a8320a;
+    border-color: #a8320a;
+}
+
+/* Horizontal rules */
+hr {
+    border-color: rgba(47,93,63,.2);
+}
+
+/* Contact info highlights */
+.infoCard strong {
+    color: #2f5d3f;
+}
+.pageHero {
+    min-height: 60vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)
+        ),
+        url("fullfamily.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================
+   EVENT FILTER BUTTONS
+========================= */
+
+.season-btn,
+.btn.btn-secondary {
+    border: none;
+    border-radius: 30px;
+
+    padding: 12px 24px;
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* All Events button */
+.btn.btn-secondary {
+    background: #7b2d26;
+    color: white;
+}
+
+.btn.btn-secondary:hover {
+    background: #5f1f1a;
+    transform: translateY(-2px);
+}
+
+/* Seasonal buttons */
+.season-btn {
+    background: #efe4cf;
+    color: #2f5d3f;
+    border: 2px solid #2f5d3f;
+}
+
+.season-btn:hover {
+    background: #2f5d3f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(47,93,63,0.25);
+}
+
+/* Optional active state if you add JS later */
+.season-btn.active {
+    background: #2f5d3f;
+    color: white;
+    border-color: #2f5d3f;
+}
+
+/* Center button group nicely */
+.container.text-center .season-btn,
+.container.text-center .btn-secondary {
+    min-width: 140px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .season-btn,
+    .btn.btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        margin: 6px auto;
+        display: block;
+    }
+}
+#seasonFilters {
+    display: none;
+    gap: 10px;
+}
+
+#seasonFilters.show {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

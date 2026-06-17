@@ -6,32 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About • Hollow Creek Farms</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- =========================
-     TOP BANNER + NAV
-========================= -->
 <header id="mainHeader">
 
     <div id="topBanner" class="text-center py-2 text-white">
         🌾 Fresh Produce • Family Owned • Open Daily
     </div>
 
-   <nav id="mainNavbar" class="navbar navbar-expand-lg">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg">
         <div class="container">
-  
-            <a class="navbar-brand fw-bold" href="index.html"> <img class="me-4 ms-0 px-0 py-0" src="hclogo.png" alt="Logo" height="50"> Hollow Creek Farms
-                
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img class="me-4 ms-0 px-0 py-0" src="hclogo.png" alt="Logo" height="50">
+                Hollow Creek Farms
             </a>
 
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
@@ -41,14 +34,12 @@
             <div class="collapse navbar-collapse" id="navbarLinks">
 
                 <ul class="navbar-nav ms-auto">
-
                     <li class="nav-item"><a class="nav-link navBtn" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="farm.html">Explore</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="activities.html">Events</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="store.html">Farm Store</a></li>
                     <li class="nav-item"><a class="nav-link navBtn" href="contact.html">Contact</a></li>
-
                 </ul>
 
             </div>
@@ -57,13 +48,11 @@
 
 </header>
 
-<!-- =========================
-     HERO
-========================= -->
-<section class="pageHero d-flex align-items-center">
+<section class="pageHero aboutHero d-flex align-items-center">
     <div class="container text-center text-white">
         <h1 class="display-5 fw-bold">Our Farm Story</h1>
-        <p class="mt-3 mx-auto" style="max-width: 800px;">
+
+        <p class="mt-3 mx-auto">
             Three generations of the Calloway family building Hollow Creek Farms into what it is today — a place of tradition, work, and community.
         </p>
     </div>
@@ -72,24 +61,24 @@
 <main>
 
 <!-- =========================
-     GENERATION 1
+     FOUNDERS
 ========================= -->
 <section class="generation-section text-center py-5">
 
     <div class="wood-sign mb-4">
-        <h2>🌻 Founders (1962)</h2>
+        <h2>Founders (1962)</h2>
     </div>
 
     <div class="circle-row justify-content-center d-flex flex-wrap gap-5">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Bill Calloway"
              data-description="<p><strong>Founder of Hollow Creek Farm</strong></p><p>Started the farm in 1962 with a small vegetable field that grew into today’s operation.</p>">
             <img src="guy-founder.png" alt="Bill Calloway">
             <div class="overlay"><h3>Bill</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Margaret Calloway"
              data-description="<p><strong>Co-Founder</strong></p><p>Helped build the farm from the ground up, focusing on family traditions and community roots.</p>">
             <img src="lady-founder.png" alt="Margaret Calloway">
@@ -99,47 +88,53 @@
     </div>
 </section>
 
+<!-- =========================
+     EXPANSION GEN
+========================= -->
 <section class="generation-section text-center py-5">
 
     <div class="wood-sign mb-4">
-        <h2>🌻 The Pioneers of Expansion</h2>
+        <h2>The Pioneers of Expansion</h2>
     </div>
 
     <div class="circle-row justify-content-center d-flex flex-wrap gap-5">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Charles Calloway"
              data-description="<p><strong>Founder of Hollow Creek Farm</strong></p>Inherited a small vegetable field that he worked to grow into today’s operation.</p>">
             <img src="old-guy.png" alt="Charles Calloway">
             <div class="overlay"><h3>Bill</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Alice Calloway"
              data-description="<p><strong>Co-Founder</strong></p><p>Helped build the farm from the ground up, focusing on family traditions and community roots.</p>">
-            <img src="old-lady.png" alt="Margaret Calloway">
+            <img src="old-lady.png" alt="Alice Calloway">
             <div class="overlay"><h3>Margaret</h3></div>
         </div>
 
     </div>
 </section>
 
+<!-- =========================
+     CURRENT GEN
+========================= -->
 <section class="generation-section text-center py-5">
 
     <div class="wood-sign mb-4">
-        <h2>🚜 Growth Generation</h2>
+        <h2>Growth Generation</h2>
     </div>
 
     <div class="circle-row justify-content-center d-flex flex-wrap gap-5">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Dana Calloway"
              data-description="<p><strong>Owner</strong></p><p>Expanded the farm into year-round operations and modern farm experiences.</p>">
             <img src="dark-lady.png" alt="Dana Calloway">
             <div class="overlay"><h3>Dana</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Rob Calloway"
              data-description="<p><strong>Co-Owner</strong></p><p>Oversees farm production, logistics, and seasonal planning.</p>">
             <img src="middle-guy.png" alt="Rob Calloway">
@@ -150,43 +145,43 @@
 </section>
 
 <!-- =========================
-     GENERATION 3
+     MODERN GEN
 ========================= -->
-
- 
-
-    </div>
-</section>
 <section class="generation-section text-center py-5">
 
     <div class="wood-sign mb-4">
-        <h2>🐓 Modern Farm Crew</h2>
+        <h2>Modern Farm Crew</h2>
     </div>
 
     <div class="circle-row justify-content-center d-flex flex-wrap gap-4">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Tyler Calloway"
              data-description="<p><strong>Field Manager</strong></p><p>Oversees crop fields and daily agricultural operations.</p>">
             <img class="face-left" src="young-guy.png" alt="Tyler">
             <div class="overlay"><h3>Tyler</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Meg Calloway"
              data-description="<p><strong>Coordinator</strong></p><p>Manages planning, scheduling, and farm logistics.</p>">
             <img src="blonde-lady.png" alt="Meg">
             <div class="overlay"><h3>Meg</h3></div>
         </div>
-          <div class="circle-item modal-card"
+
+        <div class="circle-item modal-card" data-page="about"
              data-title="Sam Calloway"
              data-description="<p><strong>Store Lead</strong></p><p>Runs the farm store and customer experience.</p>">
             <img class="sam" src="daughter.png" alt="Sam">
             <div class="overlay"><h3>Sam</h3></div>
         </div>
 
-      
+    </div>
 </section>
+
+<!-- =========================
+     FUTURE GEN
+========================= -->
 <section class="generation-section text-center py-5">
 
     <div class="wood-sign mb-4">
@@ -195,82 +190,84 @@
 
     <div class="circle-row justify-content-center d-flex flex-wrap gap-4">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Ella Calloway"
-             data-description="<p>Ella is one of the youngest members of the Calloway family. She loves spending time around the farm, especially in the flower fields and near the orchard. Curious and energetic, she’s always asking questions and helping wherever she can, whether it’s picking fresh produce or greeting visitors with her family.</p>">
+             data-description="<p>Ella is one of the youngest members of the Calloway family...</p>">
             <img class="face-left" src="ella.png" alt="Ella">
             <div class="overlay"><h3>Ella</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Eli Calloway"
-             data-description="<p>Eli is known for being observant and calm, often found exploring different parts of the farm with the maintenance and grounds team. He has a growing interest in how everything works behind the scenes, from equipment to irrigation systems, and enjoys learning how the farm runs day to day.</p>">
+             data-description="<p>Eli is known for being observant and calm...</p>">
             <img src="eli.png" alt="Eli">
             <div class="overlay"><h3>Eli</h3></div>
         </div>
 
+    </div>
+</section>
 
 <!-- =========================
-     STAFF SECTION (PRESERVED)
+     STAFF
 ========================= -->
 <section class="farm-layer text-center py-5">
 
     <div class="wood-sign mb-4">
-        <h2>🌾 Farm Operations Team</h2>
+        <h2>Farm Operations Team</h2>
     </div>
 
     <div class="staff-grid">
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Benny"
              data-description="<p>Field Technician maintaining crops and irrigation systems.</p>">
             <img src="hat-worker.png" alt="Benny">
             <div class="overlay"><h3>Benny</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Lenny"
              data-description="<p>Equipment specialist responsible for farm machinery.</p>">
             <img src="nohat-worker.png" alt="Lenny">
             <div class="overlay"><h3>Lenny</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Lydia"
              data-description="<p>Handles packaging and product preparation.</p>">
             <img src="old-worker.png" alt="Lydia">
             <div class="overlay"><h3>Lydia</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Marcus"
              data-description="<p>Livestock caretaker ensuring animal wellbeing.</p>">
             <img src="guy-worker.png" alt="Marcus">
             <div class="overlay"><h3>Marcus</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Nina"
              data-description="<p>Farm store staff member assisting customers.</p>">
             <img src="headband-worker.png" alt="Nina">
             <div class="overlay"><h3>Nina</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Eli"
              data-description="<p>Maintenance worker keeping the farm running smoothly.</p>">
             <img src="asian-worker.png" alt="Eli">
             <div class="overlay"><h3>Eli</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Rosa"
              data-description="<p>Floral department specialist designing arrangements.</p>">
             <img src="black-worker.png" alt="Rosa">
             <div class="overlay"><h3>Rosa</h3></div>
         </div>
 
-        <div class="circle-item modal-card"
+        <div class="circle-item modal-card" data-page="about"
              data-title="Callie"
              data-description="<p>Events coordinator managing farm experiences.</p>">
             <img src="lady-worker.png" alt="Callie">
@@ -283,9 +280,7 @@
 
 </main>
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- MODAL -->
 <div class="modal fade" id="genericModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -300,30 +295,23 @@
         </div>
     </div>
 </div>
+
 <footer id="mainFooter" class="text-white py-4">
-
     <div class="container">
-
         <div class="row">
-
             <div class="col-md-6">
                 <h5>Hollow Creek Farms</h5>
                 <p>Fresh produce and unforgettable memories.</p>
             </div>
-
             <div class="col-md-6 text-end">
                 <i class="bi bi-facebook me-3"></i>
                 <i class="bi bi-instagram me-3"></i>
                 <i class="bi bi-twitter-x"></i>
             </div>
-
         </div>
-
     </div>
-
 </footer>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 
